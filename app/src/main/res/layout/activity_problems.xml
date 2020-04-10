@@ -9,7 +9,7 @@
     android:padding="15dp"
     android:gravity="center_horizontal"
     android:background="@color/white"
-    tools:context="com.lxkj.hrhc.Activity.ProblemsActivity">
+    tools:context="com.lxkj.jpz.Activity.ProblemsActivity">
    <TextView
        android:id="@+id/tv_title"
        android:text=""

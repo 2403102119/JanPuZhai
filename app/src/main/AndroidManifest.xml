@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lxkj.hrhc">
+    package="com.lxkj.jpz">
 
     <!-- 极光推送 -->
 
@@ -8,11 +8,11 @@
     <!-- 极光推送 -->
     <!-- Required -->
     <permission
-        android:name="com.lxkj.hrhc.permission.JPUSH_MESSAGE"
+        android:name="com.lxkj.jpz.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <!-- Required  一些系统要求的权限，如访问网络等 -->
-    <uses-permission android:name="com.lxkj.hrhc.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="com.lxkj.jpz.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -90,7 +90,7 @@
                 <action android:name="cn.jpush.android.ui.PushActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.lxkj.hrhc" />
+                <category android:name="com.lxkj.jpz" />
             </intent-filter>
         </activity>
 
@@ -110,7 +110,7 @@
         <!-- since 3.0.9 Required SDK 核心功能 -->
         <provider
             android:name="cn.jpush.android.service.DataProvider"
-            android:authorities="com.lxkj.hrhc.DataProvider"
+            android:authorities="com.lxkj.jpz.DataProvider"
             android:exported="false"
             android:process=":pushcore" />
 
@@ -123,13 +123,13 @@
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.DaemonService" />
 
-                <category android:name="com.lxkj.hrhc" />
+                <category android:name="com.lxkj.jpz" />
             </intent-filter>
         </service>
         <!-- since 3.1.0 Required SDK 核心功能 -->
         <provider
             android:name="cn.jpush.android.service.DownloadProvider"
-            android:authorities="com.lxkj.hrhc.DownloadProvider"
+            android:authorities="com.lxkj.jpz.DownloadProvider"
             android:exported="true" />
         <!-- Required SDK核心功能 -->
         <receiver
@@ -138,7 +138,7 @@
             android:exported="false">
             <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
-                <category android:name="com.lxkj.hrhc" />
+                <category android:name="com.lxkj.jpz" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -179,7 +179,7 @@
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
                 <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
-                <category android:name="com.lxkj.hrhc" />
+                <category android:name="com.lxkj.jpz" />
             </intent-filter>
         </receiver>
 
@@ -188,7 +188,7 @@
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
 
-                <category android:name="com.lxkj.hrhc" />
+                <category android:name="com.lxkj.jpz" />
             </intent-filter>
         </receiver>
         <!-- Required  . Enable it you can get statistics data with channel -->
@@ -218,7 +218,8 @@
         <activity
             android:name=".Activity.LoginActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".Activity.RegistActivity" />
+        <activity android:name=".Activity.RegistActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".Activity.ForgetActivity" />
         <activity android:name=".Activity.BindingActivity" />
         <activity android:name=".Activity.PersonalActivity" />
@@ -255,8 +256,7 @@
         <activity android:name=".Activity.DetailsrefundActivity" />
         <activity android:name=".Activity.RefundActivity" />
         <activity android:name=".Activity.WebViewActivity" />
-        <activity
-            android:name=".Activity.StartActivity">
+        <activity android:name=".Activity.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -272,6 +272,12 @@
             android:name="cn.beecloud.BCWechatPaymentActivity"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity-alias
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:targetActivity="cn.beecloud.BCWechatPaymentActivity" />
+
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
@@ -300,17 +306,25 @@
             android:name="cn.beecloud.BCMockPayActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity-alias
-            android:name=".wxapi.WXPayEntryActivity"
-            android:exported="true"
-            android:targetActivity="cn.beecloud.BCWechatPaymentActivity" />
-
         <activity
             android:name=".Activity.OneActivity"
             android:resizeableActivity="true" />
         <activity android:name=".Activity.TwoActivity" />
         <activity android:name=".Activity.ThreeActivity" />
-        <activity android:name=".Activity.ProtocolActivity"></activity>
+        <activity android:name=".Activity.ProtocolActivity" />
+        <activity android:name=".Activity.MailboxActivity" />
+        <activity android:name=".Activity.RelationActivity" />
+        <activity android:name=".Activity.activitActivity" />
+        <activity android:name=".Activity.InviteActivity" />
+        <activity android:name=".Activity.PosterActivity" />
+        <activity android:name=".Activity.RecordActivity" />
+        <activity android:name=".Activity.RechargeActivity" />
+        <activity android:name=".Activity.EarningsActivity" />
+        <activity android:name=".Activity.WithdrawActivity" />
+        <activity android:name=".Activity.Withdrawal_successActivity" />
+        <activity android:name=".Activity.EvaluateActivity" />
+        <activity android:name=".Activity.VipActivity" />
+        <activity android:name=".Activity.Store_listActivity"></activity>
     </application>
 
 </manifest>

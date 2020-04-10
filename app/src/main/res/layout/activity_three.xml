@@ -8,7 +8,7 @@
     android:background="#661FBB"
     android:focusableInTouchMode="true"
     android:focusable="true"
-    tools:context="com.lxkj.hrhc.Activity.ThreeActivity">
+    tools:context="com.lxkj.jpz.Activity.ThreeActivity">
    <com.scwang.smartrefresh.layout.SmartRefreshLayout
        android:id="@+id/smart"
        app:srlEnableRefresh="false"

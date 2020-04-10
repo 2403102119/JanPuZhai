@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lxkj.hrhc.Activity.ReceivewActivity">
+    android:background="@color/white"
+    tools:context="com.lxkj.jpz.Activity.ReceivewActivity">
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/smart"
         android:layout_width="match_parent"
@@ -17,14 +18,13 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/address_recycle"
             android:paddingBottom="50dp"
-            android:background="#F2F2F2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </android.support.v7.widget.RecyclerView>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
    <TextView
        android:id="@+id/tv_address"
-       android:text="添加地址"
+       android:text="@string/Add_the_address"
        android:gravity="center"
        android:textColor="@color/white"
        android:textSize="16sp"

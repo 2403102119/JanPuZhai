@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="com.lxkj.hrhc.Activity.FaqActivity">
+    tools:context="com.lxkj.jpz.Activity.FaqActivity">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle"
         android:background="@color/white"

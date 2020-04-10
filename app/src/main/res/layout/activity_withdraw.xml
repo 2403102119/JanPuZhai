@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_15"
+    android:background="@color/white"
+    tools:context="com.lxkj.jpz.Activity.WithdrawActivity">
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/xingming1"
+            android:textSize="14sp"
+            android:textColor="@color/grey3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/tv_name"
+            android:hint="请输入姓名"
+            android:textSize="11sp"
+            android:layout_marginRight="@dimen/dp_65"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_5"
+            android:textColor="@color/grey3"
+            android:layout_marginLeft="65dp"
+            android:singleLine="true"
+            android:background="@drawable/biankuang"
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/yinhangkazhanghao"
+            android:textSize="14sp"
+            android:textColor="@color/grey3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_number"
+            android:hint="@string/shuruyinhangkazhanghao"
+            android:textSize="11sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_5"
+            android:textColor="@color/grey3"
+            android:layout_marginRight="@dimen/dp_65"
+            android:layout_marginLeft="23dp"
+            android:singleLine="true"
+            android:background="@drawable/biankuang"
+            android:layout_width="match_parent"
+            android:layout_height="28dp" />
+    </LinearLayout>
+    <View
+        android:layout_marginTop="41dp"
+        android:background="#E7E7E7"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"/>
+    <TextView
+        android:layout_marginTop="33dp"
+        android:text="@string/tixianjine"
+        android:textColor="@color/grey3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/et_jine"
+        android:layout_marginTop="@dimen/dp_13"
+        android:hint="@string/shurutixianjine"
+        android:textSize="11sp"
+        android:layout_marginRight="@dimen/dp_65"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_5"
+        android:textColor="@color/grey3"
+        android:singleLine="true"
+        android:inputType="number|numberDecimal"
+        android:background="@drawable/biankuang"
+        android:layout_width="match_parent"
+        android:layout_height="28dp" />
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_22"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_shouxu"
+            android:text="@string/shouxufei"
+            android:textSize="12sp"
+            android:textColor="@color/grey_666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="287dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/biankuang3"
+        android:gravity="center"
+        android:text="@string/shenqingtixian"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</LinearLayout>

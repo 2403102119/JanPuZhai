@@ -4,20 +4,20 @@
     android:layout_width="match_parent"
     android:gravity="center_vertical"
     android:layout_height="wrap_content"
+    android:background="@drawable/biankaung25"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="18dp"
+    android:padding="@dimen/dp_3"
     android:orientation="vertical">
     <LinearLayout
         android:id="@+id/ll_sell"
-        android:padding="@dimen/dp_10"
-        android:background="@drawable/biankuang4"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@+id/image2"
-                android:layout_width="110dp"
+                android:layout_width="match_parent"
                 android:layout_height="110dp"
                 android:layout_gravity="center_vertical"
                 android:scaleType="centerCrop"
@@ -46,10 +46,6 @@
                 android:text="南极人网红款四件套宿舍床上用品单人学生床单被潘婷氨基酸丝质顺滑洗发水700ML修复发质"
                 android:textColor="#111"
                 android:textSize="@dimen/sp_14" />
-            <View
-                android:layout_width="1dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
             <LinearLayout
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
@@ -65,17 +61,18 @@
                     android:textSize="@dimen/sp_11" />
                 <TextView
                     android:id="@+id/tv_money"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:gravity="center_vertical"
                     android:singleLine="true"
                     android:text="49.9"
-                    android:textStyle="bold"
                     android:textColor="@color/mainColor"
                     android:textSize="@dimen/sp_16" />
                 <TextView
                     android:id="@+id/tv_oldPrice"
+                    android:visibility="gone"
                     android:layout_marginLeft="6dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -86,6 +83,7 @@
                     android:textSize="@dimen/sp_12" />
                 <TextView
                     android:id="@+id/tv_sales"
+                    android:visibility="gone"
                     android:text="200人付款"
                     android:paddingRight="8dp"
                     android:layout_width="0dp"
@@ -94,6 +92,10 @@
                     android:textSize="10sp"
                     android:textColor="#B2B2B2"
                     android:layout_height="match_parent" />
+                <ImageView
+                    android:src="@mipmap/go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
 

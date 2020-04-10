@@ -164,9 +164,10 @@
                 android:text="查看物流"
                 android:visibility="gone"
                 android:gravity="center"
+                android:textSize="13sp"
                 android:layout_marginRight="15dp"
-                android:textColor="@color/red_them"
-                android:background="@drawable/biankuang6"
+                android:textColor="@color/grey3"
+                android:background="@drawable/biankuang12"
                 android:layout_width="83dp"
                 android:layout_height="30dp" />
             <TextView
@@ -174,8 +175,9 @@
                 android:text="去付款"
                 android:visibility="gone"
                 android:gravity="center"
-                android:textColor="@color/red_them"
-                android:background="@drawable/biankuang6"
+                android:textSize="13sp"
+                android:textColor="@color/grey3"
+                android:background="@drawable/biankuang12"
                 android:layout_width="83dp"
                 android:layout_height="30dp" />
         </LinearLayout>

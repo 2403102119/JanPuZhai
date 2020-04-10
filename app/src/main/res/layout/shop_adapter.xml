@@ -5,21 +5,44 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/tv_proxyCode"
-        android:textSize="14sp"
-        android:src="@mipmap/tejiaxiangou"
-        android:scaleType="fitXY"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginBottom="@dimen/dp_5"
+    <LinearLayout
+        android:id="@+id/ll_zhuanqu"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_width="match_parent"
-        android:layout_height="102dp" />
+        android:layout_height="wrap_content">
+        <View
+            android:background="@color/red_them"
+            android:layout_width="4dp"
+            android:layout_height="17dp"/>
+        <TextView
+            android:id="@+id/tv_zhuanqu"
+            android:layout_marginLeft="7dp"
+            android:text="@string/Commodity_zone"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/grey3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="查看更多"
+            android:textSize="11sp"
+            android:layout_marginRight="@dimen/dp_3"
+            android:textColor="@color/grey_666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@mipmap/chakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycle"
-        android:paddingLeft="22dp"
-        android:paddingRight="22dp"
+        android:id="@+id/guessrecycle"
+        android:paddingTop="12dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>

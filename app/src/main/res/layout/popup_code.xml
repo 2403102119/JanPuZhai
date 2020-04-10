@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/ll_sell"
+    android:gravity="center"
+    android:background="#33000000">
+   <LinearLayout
+       android:layout_marginLeft="36dp"
+       android:layout_marginRight="36dp"
+       android:orientation="vertical"
+       android:padding="@dimen/dp_15"
+       android:background="@drawable/biankuang4"
+       android:layout_width="match_parent"
+       android:layout_height="160dp">
+       <LinearLayout
+           android:gravity="right"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+          <ImageView
+              android:src="@mipmap/cuo"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+       </LinearLayout>
+       <TextView
+           android:id="@+id/tv_InviteCode"
+           android:layout_marginTop="@dimen/dp_20"
+           android:textColor="@color/grey3"
+           android:textSize="18sp"
+           android:layout_gravity="center"
+           android:text="邀请码：8886669"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+       <TextView
+           android:text="@string/copy"
+           android:textColor="#FD3646"
+           android:gravity="center"
+           android:layout_marginTop="26dp"
+           android:layout_gravity="center"
+           android:background="@drawable/biankuang17"
+           android:layout_width="85.5dp"
+           android:layout_height="28.5dp" />
+   </LinearLayout>
+</LinearLayout>

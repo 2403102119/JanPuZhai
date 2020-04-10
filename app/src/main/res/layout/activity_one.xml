@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:focusable="true"
-    tools:context="com.lxkj.hrhc.Activity.OneActivity">
+    tools:context="com.lxkj.jpz.Activity.OneActivity">
         <com.scwang.smartrefresh.layout.SmartRefreshLayout
             android:id="@+id/smart"
             app:srlEnableRefresh="false"
@@ -21,19 +21,22 @@
                 android:id="@+id/ns"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#E72D2E">
+                android:background="@color/white">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <RelativeLayout
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <ImageView
                             android:id="@+id/im_top"
                             android:scaleType="fitXY"
+                            android:src="@mipmap/logo"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp" />
+                            android:layout_height="141dp" />
                     </RelativeLayout>
 
                     <android.support.v7.widget.RecyclerView
@@ -49,40 +52,6 @@
             </android.support.v4.widget.NestedScrollView>
         </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
-    <RelativeLayout
-        android:id="@+id/rl_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E72D2E">
-        <FrameLayout
-            android:id="@+id/fl_top"
-            android:paddingTop="23dp"
-            android:background="@color/transparent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/finishBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/dp_10"
-                android:padding="@dimen/dp_10"
-                android:src="@mipmap/fanhui"
-                android:visibility="visible" />
-
-            <TextView
-                android:id="@+id/titleName"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_50"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:maxLength="8"
-                android:text="首页"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_18"/>
-        </FrameLayout>
-        
-    </RelativeLayout>
 
 
 </RelativeLayout>

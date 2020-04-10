@@ -5,19 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
+        android:gravity="center_vertical"
         android:layout_marginTop="14dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
+        <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/im_userIcon"
             android:scaleType="fitXY"
+            app:riv_oval="true"
             android:src="@mipmap/yongjinzhongxin"
             android:layout_width="41dp"
             android:layout_height="41dp" />
         <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="15dp"
             android:gravity="center_vertical"
@@ -29,40 +30,41 @@
                 android:textSize="14sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-            <com.iarcuschin.simpleratingbar.SimpleRatingBar
-                android:id="@+id/rb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srb_starSize="11dp"
-                app:srb_isIndicator="true"
-                android:layout_marginTop="10dp"
-                app:srb_numberOfStars="5"
-                app:srb_rating="0"
-                app:srb_stepSize="1"
-                app:srb_drawBorderEnabled="false"
-                app:srb_starBackgroundColor="#c0c0c0"
-                app:srb_fillColor="@color/red_them"/>
+
         </LinearLayout>
+        <com.iarcuschin.simpleratingbar.SimpleRatingBar
+            android:id="@+id/rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srb_starSize="11dp"
+            android:layout_marginLeft="5dp"
+            app:srb_isIndicator="true"
+            app:srb_numberOfStars="5"
+            app:srb_rating="0"
+            app:srb_stepSize="1"
+            app:srb_drawBorderEnabled="false"
+            app:srb_starBackgroundColor="#c0c0c0"
+            app:srb_fillColor="@color/red_them"/>
         <TextView
             android:id="@+id/tv_adtime"
+            android:visibility="gone"
             android:text=""
             android:textColor="#666666"
             android:textSize="10sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/tv_content"
         android:layout_marginTop="16dp"
         android:textSize="13sp"
-        android:layout_marginLeft="@dimen/dp_55"
         android:textColor="#666666"
         android:text=""
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle"
-        android:layout_marginLeft="@dimen/dp_55"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
     android:focusable="true"
-    tools:context="com.lxkj.hrhc.Activity.TwoActivity">
+    tools:context="com.lxkj.jpz.Activity.TwoActivity">
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/smart"
         app:srlEnableRefresh="false"

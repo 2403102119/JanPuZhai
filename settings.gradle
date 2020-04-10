@@ -1,1 +1,1 @@
-include ':app',':okhttputils',':dialog',':beecloud',':flowlayout-lib',':jdsdk_lib'
+include ':app',':okhttputils',':dialog',':flowlayout-lib'

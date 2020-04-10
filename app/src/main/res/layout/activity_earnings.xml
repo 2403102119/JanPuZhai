@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lxkj.jpz.Activity.EarningsActivity">
+
+
+    <LinearLayout
+        android:layout_below="@+id/Title"
+        android:orientation="vertical"
+        android:padding="13dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="27dp"
+                android:text="@string/My_total_gain"
+                android:layout_marginTop="18dp"
+                android:textColor="#E9AF7C"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_code"
+                android:layout_marginTop="27dp"
+                android:text="$0.00"
+                android:textColor="#E9AF7C"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_marginTop="23dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                 <TextView
+                     android:layout_marginLeft="29dp"
+                     android:textColor="#E9AF7C"
+                     android:textSize="12sp"
+                     android:text="@string/Earnings_can_be_withdrawn"
+                     android:layout_width="0dp"
+                     android:layout_weight="1"
+                     android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="55dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="26dp"
+                    android:background="@drawable/biankuang10"
+                    android:gravity="center"
+                    android:text="@string/withdraw_deposit"
+                    android:textColor="#755B46"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="9.5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_one"
+                    android:text="@string/Returns_detailed"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_5"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/grey3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/smart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </com.scwang.smartrefresh.layout.header.ClassicsHeader>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycle"
+                    android:paddingTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </android.support.v7.widget.RecyclerView>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

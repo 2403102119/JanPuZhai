@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="17dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/im_icon"
+            android:src="@mipmap/logo"
+            android:scaleType="fitXY"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+        <LinearLayout
+            android:layout_marginLeft="19.5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+             <TextView
+                 android:id="@+id/tv_site"
+                 android:singleLine="true"
+                 android:lines="1"
+                 android:ellipsize="end"
+                 android:textSize="13sp"
+                 android:textColor="@color/grey_666"
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_phone"
+                android:textSize="11sp"
+                android:textColor="@color/grey_999"
+                android:layout_marginTop="11dp"
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+   <View
+       android:layout_marginTop="@dimen/dp_5"
+       android:background="@color/grey_999"
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"/>
+
+</LinearLayout>

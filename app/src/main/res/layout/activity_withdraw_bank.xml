@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     android:paddingTop="13dp"
-    tools:context="com.lxkj.hrhc.Activity.Withdraw_bankActivity">
+    tools:context="com.lxkj.jpz.Activity.Withdraw_bankActivity">
     <TextView
         android:text="提现账户："
         android:textColor="@color/black"

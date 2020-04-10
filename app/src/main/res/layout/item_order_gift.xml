@@ -74,7 +74,7 @@
                         android:gravity="center_vertical"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:text="规格: "
+                        android:text="@string/guige"
                         android:textColor="#999"
                         android:textSize="@dimen/sp_12" />
                     <TextView

@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="18dp"
     android:background="@color/white"
-    tools:context="com.lxkj.hrhc.Activity.Message_detaileActivity">
+    tools:context="com.lxkj.jpz.Activity.Message_detaileActivity">
   <TextView
       android:id="@+id/tv_title"
       android:textStyle="bold"

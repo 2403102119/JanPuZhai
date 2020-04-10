@@ -15,14 +15,12 @@
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/image1"
             android:src="@mipmap/bai"
-            android:layout_width="match_parent"
+            android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="fitXY"
             app:riv_border_width="0dip"
-            app:riv_corner_radius_top_left="@dimen/dp_5"
-            app:riv_corner_radius_top_right="@dimen/dp_5"
             app:riv_mutate_background="true"
-            app:riv_oval="false" />
+            app:riv_oval="true" />
         <LinearLayout
             android:layout_marginBottom="9.5dp"
             android:layout_width="match_parent"
@@ -37,13 +35,14 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="@dimen/dp_10"
                 android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
                 android:layout_weight="7"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="2"
                 android:text="二级分类"
                 android:textColor="#000"
-                android:textSize="@dimen/sp_10" />
+                android:textSize="@dimen/sp_13" />
         </LinearLayout>
     </LinearLayout>
 

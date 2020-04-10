@@ -6,32 +6,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="15dp"
     android:background="@color/white"
-    tools:context="com.lxkj.hrhc.Activity.ChangenameActivity">
-   <EditText
-       android:id="@+id/tv_name"
-       android:hint="请输入您的昵称"
-       android:textColorHint="#999999"
-       android:textSize="14sp"
-       android:textColor="@color/black"
-       android:background="@null"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content" />
-    <View
+    tools:context="com.lxkj.jpz.Activity.ChangenameActivity">
+    <LinearLayout
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+         <TextView
+             android:text="@string/nicheng"
+             android:textColor="@color/grey3"
+             android:textSize="14sp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" />
+        <com.lxkj.jpz.View.ClearEditText
+            android:id="@+id/tv_name"
+            android:hint="@string/Please_fill_in_the_user_name"
+            android:textColorHint="#999999"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+    </LinearLayout>
+    <View
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:background="#E5E5E5"
         android:layout_width="match_parent"
         android:layout_height="1dp"/>
-    <TextView
-        android:id="@+id/tv_login"
-        android:layout_width="287dp"
-        android:layout_height="44dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="122dp"
-        android:background="@drawable/biankuang3"
-        android:gravity="center"
-        android:text="确定"
-        android:textColor="@color/white"
-        android:textSize="16sp" />
+    <View
+        android:layout_width="1dp"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="32dp"
+            android:background="#FD3646"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="32dp"
+            android:background="#FC737E"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
 </LinearLayout>

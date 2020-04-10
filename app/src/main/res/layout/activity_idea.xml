@@ -8,8 +8,9 @@
     android:orientation="vertical"
     android:padding="15dp"
     android:background="@color/white"
-    tools:context="com.lxkj.hrhc.Activity.IdeaActivity">
+    tools:context="com.lxkj.jpz.Activity.IdeaActivity">
     <LinearLayout
+        android:visibility="gone"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -52,7 +53,7 @@
         android:textSize="14sp"
         android:padding="@dimen/dp_15"
         android:layout_marginTop="15dp"
-        android:background="@drawable/biankuang10"
+        android:background="@drawable/biankuang"
         android:layout_width="match_parent"
         android:layout_height="200dp" />
     <TextView

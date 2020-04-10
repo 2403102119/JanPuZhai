@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
-    android:background="@color/white"
-    android:layout_marginTop="@dimen/dp_3"
+    android:orientation="vertical"
+    android:background="@drawable/biankaung25"
+    android:layout_marginTop="18dp"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
         android:gravity="center"
         android:paddingBottom="3dp"
-        android:background="@mipmap/juxingyinying"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/image2"
-            android:layout_width="88dp"
+            android:layout_width="match_parent"
             android:layout_height="88dp"
             android:layout_gravity="center_vertical"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             android:src="@mipmap/yongjinzhongxin"
             app:riv_border_width="0dip"
             app:riv_corner_radius="5dip"
@@ -40,34 +41,35 @@
             android:lines="2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <View
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"/>
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:text="¥"
+                android:text="$"
                 android:textSize="13sp"
                 android:textColor="#FF1111"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/tv_money"
-                android:text="30.00"
+                android:text="0.00"
                 android:textSize="18sp"
                 android:textColor="#FF1111"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content" />
             <TextView
+                android:visibility="gone"
                 android:id="@+id/tv_oldPrice"
                 android:layout_marginLeft="10dp"
                 android:text="￥50.00"
                 android:textColor="#B2B2B2"
                 android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:src="@mipmap/go"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>

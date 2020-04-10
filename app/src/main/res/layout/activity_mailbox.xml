@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context="com.lxkj.jpz.Activity.MailboxActivity">
+    <TextView
+        android:text="@string/Email_quick_login"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/grey3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="@string/mailbox"
+        android:textSize="15sp"
+        android:layout_marginTop="33dp"
+        android:textColor="@color/grey3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:hint="@string/Please_enter_your_email_number"
+        android:textColorHint="#999999"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E5E5" />
+    <TextView
+        android:text="@string/verification_code"
+        android:textSize="15sp"
+        android:layout_marginTop="19dp"
+        android:textColor="@color/grey3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edit2"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="@string/Please_enter_the_verification_code"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColorHint="#999999"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="#E6E6E6" />
+
+        <TextView
+            android:id="@+id/faCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="14dp"
+            android:text="@string/get_code"
+            android:textColor="@color/grey_666" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E5E5" />
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="287dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/biankuang3"
+        android:gravity="center"
+        android:text="@string/log_in"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</LinearLayout>

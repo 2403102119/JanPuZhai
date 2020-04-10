@@ -4,9 +4,9 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="separate">#EFEFEF</color>
-    <color name="white">#FFFFFE</color>
+    <color name="white">#FFFFFF</color>
     <color name="press">#cccccc</color>
-    <color name="red_them">#20D69F</color>
+    <color name="red_them">#FD3646</color>
     <color name="txt_orange0">#23B7AC</color>
     <color name="txt_orange1">#73D242</color>
     <color name="txt_orange2">#999</color>
@@ -78,6 +78,9 @@
     <color name="one">#E72D2E</color>
     <color name="two">#F18C46</color>
     <color name="three">#661FBB</color>
+    <color name="gray_bg">#f0eff5</color>
+    <color name="gray_line">#ebebeb</color>
+    <color name="black_text">#333</color>
 
 
 

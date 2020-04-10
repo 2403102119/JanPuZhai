@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="com.lxkj.hrhc.Activity.AlipaywinActivity">
+    tools:context="com.lxkj.jpz.Activity.AlipaywinActivity">
    <LinearLayout
-       android:background="#F2F2F2"
+       android:background="@color/white"
        android:gravity="center"
        android:orientation="vertical"
        android:layout_width="match_parent"
@@ -26,7 +26,7 @@
            android:textSize="20sp"
            android:textColor="#666666"
            android:layout_marginTop="32.5dp"
-           android:text="提现申请成功，等待管理员处理"
+           android:text="@string/Show_the_ok"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content" />
    </LinearLayout>
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="提现金额"
+            android:text="@string/cash_withdrawal_amount"
             android:textSize="14sp"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
@@ -68,14 +68,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:text="提现方式"
+            android:text="@string/Withdrawal_way"
             android:textSize="14sp"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/tv_name"
-            android:hint="支付宝-张小艺"
+            android:hint=""
             android:paddingTop="5dp"
             android:gravity="right"
             android:textColor="#666666"
@@ -91,7 +91,7 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/biankuang3"
         android:gravity="center"
-        android:text="完成"
+        android:text="@string/accomplish"
         android:textColor="@color/white"
         android:textSize="16sp" />
 </LinearLayout>

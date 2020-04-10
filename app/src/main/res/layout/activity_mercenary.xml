@@ -8,7 +8,7 @@
     android:focusableInTouchMode="true"
     android:focusable="true"
     android:background="@color/red_them"
-    tools:context="com.lxkj.hrhc.Activity.MercenaryActivity">
+    tools:context="com.lxkj.jpz.Activity.MercenaryActivity">
     <View
         android:background="@drawable/jianbian"
         android:layout_width="match_parent"
@@ -66,7 +66,7 @@
                 android:background="@color/red_them"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <com.lxkj.hrhc.View.RoundImageView
+                <com.lxkj.jpz.View.RoundImageView
                     android:id="@+id/ri_table"
                     android:src="@mipmap/tejiaxiangou"
                     android:scaleType="fitXY"

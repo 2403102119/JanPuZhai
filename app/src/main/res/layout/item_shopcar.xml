@@ -22,133 +22,156 @@
             android:scaleType="centerInside"
             android:src="@mipmap/weixuan" />
         <LinearLayout
-            android:id="@+id/ll_sell"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/image2"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/dp_5"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/yongjinzhongxin"
-                app:riv_border_width="0dip"
-                app:riv_corner_radius="5dip"
-                app:riv_mutate_background="true"
-                app:riv_oval="false" />
-
             <LinearLayout
-                android:id="@+id/ll"
-                android:background="@color/white"
-                android:gravity="center_vertical"
+                android:id="@+id/ll_sell"
+                android:layout_weight="1"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/dp_10"
-                android:orientation="vertical">
+                android:layout_height="0dp">
 
-                <TextView
-                    android:id="@+id/tv1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:lines="2"
-                    android:text="南极人网红款四件套宿舍床上用品单人学生床单被套..."
-                    android:textColor="#111"
-                    android:textSize="@dimen/sp_14" />
-                 <LinearLayout
-                     android:orientation="horizontal"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content">
-                     <TextView
-                         android:id="@+id/tv2"
-                         android:layout_width="0dp"
-                         android:layout_weight="1"
-                         android:layout_height="@dimen/dp_30"
-                         android:ellipsize="end"
-                         android:gravity="center_vertical"
-                         android:maxLines="1"
-                         android:singleLine="true"
-                         android:text="规格: 20斤一箱"
-                         android:textColor="#999"
-                         android:textSize="@dimen/sp_12" />
-                     <TextView
-                         android:id="@+id/tv_number"
-                         android:text=""
-                         android:visibility="gone"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content" />
-                 </LinearLayout>
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/image2"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/yongjinzhongxin"
+                    app:riv_border_width="0dip"
+                    app:riv_corner_radius="5dip"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="false" />
 
                 <LinearLayout
+                    android:id="@+id/ll"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="6">
-
-                    <TextView
-                        android:id="@+id/tv3"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_weight="3"
-                        android:gravity="center_vertical"
-                        android:singleLine="true"
-                        android:text="¥ 49.9"
-                        android:textColor="@color/mainColor"
-                        android:textSize="@dimen/sp_15" />
-
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:lines="2"
+                            android:text="南极人网红款四件套宿舍床上用品单人学生床单被套..."
+                            android:textColor="#111"
+                            android:textSize="@dimen/sp_14" />
+                        <ImageView
+                            android:id="@+id/im_shanchu"
+                            android:src="@mipmap/shanchu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="@dimen/dp_0"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3"
-                        android:orientation="horizontal">
-                        <!--<com.lx.whsq.view.AmountView2-->
-                        <!--android:id="@+id/number"-->
-                        <!--android:layout_width="@dimen/dp_60"-->
-                        <!--android:layout_height="30dp"-->
-                        <!--android:layout_alignParentRight="true"-->
-                        <!--android:layout_centerInParent="true"-->
-                        <!--android:layout_centerVertical="true"-->
-                        <!--android:layout_gravity="right"-->
-                        <!--android:layout_marginRight="15dp"-->
-                        <!--android:visibility="gone"-->
-                        <!--app:currentValue="5"-->
-                        <!--app:maxValue="99"-->
-                        <!--app:minValue="3"-->
-                        <!--app:textSize="10sp" />-->
-
-                        <com.lxkj.hrhc.View.AmountView2
-                            android:id="@+id/AmountView"
-                            android:gravity="center"
-                            android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="@dimen/dp_30"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerInParent="true"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="规格: 20斤一箱"
+                            android:textColor="#999"
+                            android:textSize="@dimen/sp_12" />
+                        <TextView
+                            android:id="@+id/tv_number"
+                            android:text=""
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="6">
+
+                        <TextView
+                            android:id="@+id/tv3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            android:layout_gravity="right"
-                            android:layout_marginRight="15dp"
-                            android:visibility="visible"
-                            app:btnTextSize="14sp"
-                            app:btnWidth="36dp"
-                            app:tvWidth="50dp" />
+                            android:layout_weight="3"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="¥ 49.9"
+                            android:textColor="@color/mainColor"
+                            android:textSize="@dimen/sp_15" />
+
+
+                        <LinearLayout
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:orientation="horizontal">
+                            <!--<com.lx.whsq.view.AmountView2-->
+                            <!--android:id="@+id/number"-->
+                            <!--android:layout_width="@dimen/dp_60"-->
+                            <!--android:layout_height="30dp"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:layout_gravity="right"-->
+                            <!--android:layout_marginRight="15dp"-->
+                            <!--android:visibility="gone"-->
+                            <!--app:currentValue="5"-->
+                            <!--app:maxValue="99"-->
+                            <!--app:minValue="3"-->
+                            <!--app:textSize="10sp" />-->
+
+                            <com.lxkj.jpz.View.AmountView2
+                                android:id="@+id/AmountView"
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/dp_30"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="15dp"
+                                android:visibility="visible"
+                                app:btnTextSize="14sp"
+                                app:btnWidth="36dp"
+                                app:tvWidth="50dp" />
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
 
                 </LinearLayout>
-
-
             </LinearLayout>
+            <View
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@color/btn_gtay_light"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
         </LinearLayout>
+
 
 
 

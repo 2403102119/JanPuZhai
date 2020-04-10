@@ -46,12 +46,30 @@
               android:layout_weight="1"
               android:layout_height="wrap_content" />
           <ImageView
+              android:id="@+id/im_add"
+              android:padding="@dimen/dp_5"
+              android:src="@mipmap/gouwuche"
+              android:layout_width="25dp"
+              android:layout_height="25dp" />
+          <ImageView
               android:id="@+id/im_delate"
               android:padding="@dimen/dp_5"
               android:src="@mipmap/shanchu"
               android:layout_width="25dp"
               android:layout_height="25dp" />
       </LinearLayout>
+        <View
+            android:layout_weight="1"
+            android:layout_width="1dp"
+            android:layout_height="0dp"/>
+        <TextView
+            android:id="@+id/tv_sales"
+            android:textColor="@color/grey_999"
+            android:textSize="12sp"
+            android:layout_marginBottom="7dp"
+            android:text="销量"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
         <View
             android:layout_weight="1"
             android:layout_width="1dp"

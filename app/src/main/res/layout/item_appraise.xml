@@ -164,7 +164,7 @@
             android:layout_marginRight="6.5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-        <com.lxkj.hrhc.View.FeedBackGridView
+        <com.lxkj.jpz.View.FeedBackGridView
             android:id="@+id/photo1"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"

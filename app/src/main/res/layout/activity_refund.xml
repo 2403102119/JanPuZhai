@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="com.lxkj.hrhc.Activity.RefundActivity">
+    tools:context="com.lxkj.jpz.Activity.RefundActivity">
  <RelativeLayout
      android:layout_width="match_parent"
      android:layout_height="match_parent">
@@ -19,7 +19,7 @@
        android:layout_width="match_parent"
        android:layout_height="match_parent">
     <TextView
-        android:text="请选择退款商品"
+        android:text="@string/qingxuanzetuikuanshangpin"
         android:textColor="#000000"
         android:textSize="14sp"
         android:layout_marginTop="15dp"
@@ -35,31 +35,43 @@
         android:background="#F2F2F2"
         android:layout_width="match_parent"
         android:layout_height="8dp"/>
-    <TextView
-        android:text="请选择退款原因"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/cause_recycle"
-        android:layout_marginTop="15dp"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    </android.support.v7.widget.RecyclerView>
-    <View
-        android:background="#F2F2F2"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"/>
-    <LinearLayout
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="44dp">
      <TextView
-         android:text="退款金额"
+         android:text="@string/tuikuanyuanyin1"
+         android:textColor="#000000"
+         android:textSize="14sp"
+         android:layout_marginTop="12dp"
+         android:layout_marginLeft="15dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+     <TextView
+         android:id="@+id/tv_yuanyin"
+         android:hint="@string/qingxuanze"
+         android:text=""
+         android:gravity="center_vertical"
+         android:background="@drawable/biankuang"
+         android:layout_marginLeft="14dp"
+         android:paddingLeft="3dp"
+         android:layout_marginTop="@dimen/dp_14"
+         android:layout_width="match_parent"
+         android:layout_marginRight="13dp"
+         android:textSize="12sp"
+         android:textColor="@color/grey_666"
+         android:layout_height="27.5dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+     <TextView
+         android:text="@string/tuikuanjine1"
          android:textColor="#1A1A1A"
          android:textSize="14sp"
          android:layout_marginLeft="14dp"
@@ -67,39 +79,47 @@
          android:layout_height="wrap_content"/>
      <TextView
          android:id="@+id/tv_money"
-         android:text="￥0.00"
-         android:layout_width="0dp"
-         android:layout_weight="1"
-         android:gravity="right"
+         android:text="$0.00"
+         android:gravity="center_vertical"
+         android:background="@drawable/biankuang"
+         android:layout_marginLeft="14dp"
+         android:paddingLeft="3dp"
+         android:layout_marginTop="@dimen/dp_14"
+         android:layout_width="match_parent"
          android:layout_marginRight="13dp"
          android:textSize="14sp"
-         android:textColor="#1A1A1A"
-         android:layout_height="wrap_content" />
+         android:textColor="@color/red_them"
+         android:layout_height="27.5dp" />
     </LinearLayout>
-    <View
-        android:background="#F2F2F2"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"/>
+
     <TextView
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
         android:textColor="#000000"
         android:textSize="14sp"
-        android:text="请进行问题描述："
+        android:text="@string/tuikuanshuoming1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/et_describe"
-        android:background="@drawable/biankuang6"
-        android:hint="请描述问题"
+        android:background="@drawable/biankuang"
+        android:hint="@string/qingmiaoshuwenti"
         android:textSize="13sp"
         android:textColor="#333333"
         android:gravity="top"
-        android:padding="15dp"
+        android:padding="5dp"
         android:layout_margin="15dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
-       <com.lxkj.hrhc.View.FeedBackGridView
+        android:layout_height="75dp" />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:text="@string/shanchuanpingzheng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+       <com.lxkj.jpz.View.FeedBackGridView
            android:id="@+id/photo1"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
@@ -111,7 +131,7 @@
 
   <TextView
       android:id="@+id/tv_submit"
-      android:text="提交"
+      android:text="@string/submit"
       android:gravity="center"
       android:textSize="16sp"
       android:textColor="@color/white"

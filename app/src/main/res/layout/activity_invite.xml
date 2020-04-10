@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_15"
+    android:background="@color/white"
+    tools:context="com.lxkj.jpz.Activity.InviteActivity">
+    <LinearLayout
+        android:id="@+id/ll_poster"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:text="@string/Invite_poster"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/grey3"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@mipmap/xiangyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:background="#E7E7E9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:id="@+id/ll_invite_code"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:text="@string/Invitation_code"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/grey3"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@mipmap/xiangyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:background="#E7E7E9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:id="@+id/ll_invitejilu"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+        <TextView
+            android:text="@string/Invited_to_record"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/grey3"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@mipmap/xiangyou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:background="#E7E7E9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>

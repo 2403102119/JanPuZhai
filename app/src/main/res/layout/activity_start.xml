@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red_them"
-    tools:context="com.lxkj.hrhc.Activity.StartActivity">
+    android:background="@color/white"
+    tools:context="com.lxkj.jpz.Activity.StartActivity">
     <ImageView
         android:src="@mipmap/qidongye"
         android:layout_width="match_parent"

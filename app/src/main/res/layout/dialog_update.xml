@@ -10,11 +10,12 @@
         android:layout_width="295dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@drawable/biankuang19"
+        android:background="@drawable/biankuang4"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_title"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -25,25 +26,32 @@
             android:textSize="15sp"
             android:textStyle="bold" />
         <View
+            android:visibility="gone"
             android:background="#E7E7E7"
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
-        <ScrollView
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
             android:layout_width="match_parent"
-            android:layout_height="228dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:padding="5dp">
             <TextView
                 android:id="@+id/tv_context"
-                android:text=""
+                android:text="感谢您的宝贵意见"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/grey3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-        </ScrollView>
+        </LinearLayout>
 
         <View
+            android:visibility="gone"
             android:id="@+id/henXian"
             android:layout_width="match_parent"
             android:layout_height="@dimen/line_height"
@@ -71,18 +79,16 @@
 
             <TextView
                 android:id="@+id/dialog_action_confirm"
-                android:background="@drawable/biankuang3"
-                android:layout_width="0dp"
+                android:background="@drawable/biankuang11"
+                android:layout_width="85dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_height="28dp"
                 android:gravity="center"
-                android:padding="16dp"
-                android:text="确定"
-                android:textColor="@color/white"
+                android:text="提交"
+                android:textColor="@color/red_them"
                 android:textStyle="bold" />
 
         </LinearLayout>
