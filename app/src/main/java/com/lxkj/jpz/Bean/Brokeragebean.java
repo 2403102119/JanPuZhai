@@ -14,22 +14,14 @@ public class Brokeragebean extends ResultBean {
 
 
     /**
-     * totalPage :
-     * balance : 100.00
-     * walletDetail : [{"title":"xxx","amount":"100.00","type":"0","adtime":"xxx"}]
+     * balance : 9555.00
+     * walletDetail : [{"amount":"16.00","title":"购买商品","type":"1","adtime":"2020-04-11 16:49:12"},{"amount":"110.00","title":"购买商品","type":"1","adtime":"2020-04-11 16:42:13"},{"amount":"100.00","title":"申请批发商订单","type":"1","adtime":"2020-04-11 16:30:58"},{"amount":"100.00","title":"申请批发商订单","type":"1","adtime":"2020-04-11 16:30:58"},{"amount":"100.00","title":"申请批发商订单","type":"1","adtime":"2020-04-11 16:28:38"},{"amount":"9.00","title":"购买商品","type":"1","adtime":"2020-04-11 16:13:28"},{"amount":"5.00","title":"购买商品","type":"1","adtime":"2020-04-11 08:48:52"},{"amount":"5.00","title":"购买商品","type":"1","adtime":"2020-04-11 08:47:37"}]
+     * totalPage : 1
      */
 
-    private String totalPage;
     private String balance;
+    private int totalPage;
     private List<WalletDetailBean> walletDetail;
-
-    public String getTotalPage() {
-        return totalPage;
-    }
-
-    public void setTotalPage(String totalPage) {
-        this.totalPage = totalPage;
-    }
 
     public String getBalance() {
         return balance;
@@ -37,6 +29,14 @@ public class Brokeragebean extends ResultBean {
 
     public void setBalance(String balance) {
         this.balance = balance;
+    }
+
+    public int getTotalPage() {
+        return totalPage;
+    }
+
+    public void setTotalPage(int totalPage) {
+        this.totalPage = totalPage;
     }
 
     public List<WalletDetailBean> getWalletDetail() {
@@ -49,24 +49,16 @@ public class Brokeragebean extends ResultBean {
 
     public static class WalletDetailBean {
         /**
-         * title : xxx
-         * amount : 100.00
-         * type : 0
-         * adtime : xxx
+         * amount : 16.00
+         * title : 购买商品
+         * type : 1
+         * adtime : 2020-04-11 16:49:12
          */
 
-        private String title;
         private String amount;
+        private String title;
         private String type;
         private String adtime;
-
-        public String getTitle() {
-            return title;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
 
         public String getAmount() {
             return amount;
@@ -74,6 +66,14 @@ public class Brokeragebean extends ResultBean {
 
         public void setAmount(String amount) {
             this.amount = amount;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
         }
 
         public String getType() {

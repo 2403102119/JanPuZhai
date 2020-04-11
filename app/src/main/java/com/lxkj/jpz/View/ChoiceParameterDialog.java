@@ -69,8 +69,9 @@ public class ChoiceParameterDialog extends Dialog {
     private double totleprice;
     private int current;
     private boolean hasChanged;
-    private String startbuy;
+    private String startbuy,ispifa;
     private RelativeLayout rlCount;
+    private LinearLayout ll_root;
     private String icon,fake_price,skuId,name,practical,spec;
 
     public void setSelectedListener(SelectedListener selectedListener) {
@@ -86,6 +87,7 @@ public class ChoiceParameterDialog extends Dialog {
         this.fake_price = param.getPrice();
         this.name = param.getName();
         this.startbuy = param.getStartbuy();
+        this.ispifa = param.getIspifa();
         init();
         setData();
     }
@@ -106,9 +108,9 @@ public class ChoiceParameterDialog extends Dialog {
         rv.setLayoutManager(new LinearLayoutManager(context));
         adapter = new SpecAdapter( specList);
         rv.setAdapter(adapter);
-            etCount.setText(qpl + "");
-            tvQpl.setText(String.format(context.getString(R.string.goumaishulaing), qpl));
-            checkEnable();
+        etCount.setText(qpl + "");
+        tvQpl.setText(String.format(context.getString(R.string.goumaishulaing), qpl));
+        checkEnable();
 
 
     }
@@ -138,8 +140,14 @@ public class ChoiceParameterDialog extends Dialog {
                 if (allSelected) {
                     if (checkEnable()) {
                         if (selectedListener != null) {
-                            selectedListener.onComfirm(Integer.parseInt(etCount.getText().toString()),skuId,name,practical,spec);
-                            dismiss();
+                            if (SPTool.getSessionValue(SQSP.ispifa).equals("3")){
+                                if (Integer.parseInt(startbuy)>Integer.parseInt(etCount.getText().toString())){
+                                    etCount.setText(startbuy);
+                                }
+                            }
+                                selectedListener.onComfirm(Integer.parseInt(etCount.getText().toString()),skuId,name,practical,spec);
+                                dismiss();
+
                         }
                     }
                 }else {
@@ -153,6 +161,11 @@ public class ChoiceParameterDialog extends Dialog {
                 if (allSelected) {
                     if (checkEnable()) {
                         if (selectedListener != null) {
+                            if (SPTool.getSessionValue(SQSP.ispifa).equals("3")){
+                                if (Integer.parseInt(startbuy)>Integer.parseInt(etCount.getText().toString())){
+                                    etCount.setText(startbuy);
+                                }
+                            }
                             selectedListener.ongouwuche(Integer.parseInt(etCount.getText().toString()),skuId,name,practical,spec);
                             dismiss();
                         }
@@ -165,12 +178,12 @@ public class ChoiceParameterDialog extends Dialog {
         ivPic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    if (checkEnable()) {
-                        if (selectedListener != null) {
-                            selectedListener.ondatu(icon);
-                            dismiss();
-                        }
+                if (checkEnable()) {
+                    if (selectedListener != null) {
+                        selectedListener.ondatu(icon);
+                        dismiss();
                     }
+                }
             }
         });
 
@@ -186,11 +199,17 @@ public class ChoiceParameterDialog extends Dialog {
             public boolean onTouch(View v, MotionEvent event) {
                 Utils.hiddenKeyboard(context, view);
                 checkEnable();
+                if (SPTool.getSessionValue(SQSP.ispifa).equals("3")){
+                    if (Integer.parseInt(startbuy)>Integer.parseInt(etCount.getText().toString())){
+                        etCount.setText(startbuy);
+                    }
+                }
                 return false;
             }
         });
 
         tvPrice = view.findViewById(R.id.tv_price);
+        ll_root = view.findViewById(R.id.ll_root);
         tvQpl =  view.findViewById(R.id.tv_qpl);
         tvTitle = view.findViewById(R.id.tv_title);
         ibReduce = view.findViewById(R.id.ib_reduce);
@@ -207,8 +226,26 @@ public class ChoiceParameterDialog extends Dialog {
                 .into(ivPic);
         tvTitle.setText(context.getString(R.string.kucun)+"： "+skuList.get(0).getInventoryCount());
         tvPrice.setText("$ "+fake_price);
-
-
+        ll_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (SPTool.getSessionValue(SQSP.ispifa).equals("3")){
+                    if (Integer.parseInt(startbuy)>Integer.parseInt(etCount.getText().toString())){
+                        etCount.setText(startbuy);
+                    }
+                }
+            }
+        });
+//        etCount.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                if (hasFocus) {
+//                    Toast.makeText(context,"111",Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(context,"222",Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
         etCount.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -448,7 +485,7 @@ public class ChoiceParameterDialog extends Dialog {
                     skuId = skuList.get(position).getId();
                     practical = skuList.get(position).getSkuPrice();
                     spec = skuList.get(position).getSpec().toString();
-                    if (SPTool.getSessionValue(SQSP.ispifa).equals("3")){
+                    if (SPTool.getSessionValue(SQSP.ispifa).equals("3")&&ispifa.equals("1")){
                         etCount.setText(startbuy);
                     }else {
                         etCount.setText("1");

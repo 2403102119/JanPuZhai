@@ -33,7 +33,7 @@ public class OrderdetailAdapter extends  RecyclerView.Adapter<OrderdetailAdapter
     }
     @Override
     public OrderdetailAdapter.MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_order_gift, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_order_dital, parent, false);
         return new OrderdetailAdapter.MyHolder(view);
     }
 

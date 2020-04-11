@@ -127,7 +127,7 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
         locationClient.setLocationListener(locationListener);
 
         //locationClient.startLocation();
-        startLocation();
+//        startLocation();
     }
     /**
      * 开始定位

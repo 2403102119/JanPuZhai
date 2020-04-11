@@ -99,7 +99,7 @@ public class EvaluationActivity extends BaseActivity {
 
             @Override
             public void OnbuttonImage(int position) {//点击查看大图
-//                showImage(new ImageView(mContext), position);
+                showImage(new ImageView(mContext), position);
             }
 
 

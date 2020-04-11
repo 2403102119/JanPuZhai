@@ -225,7 +225,7 @@ public class AppraiseActivity extends BaseActivity implements View.OnClickListen
     //添加订单评价
     private void addOrderComment(String orderid,List<OrderCommentBean> comment) {
         for (int i = 0; i < comment.size(); i++) {
-            comment.get(i).setImages(comment.get(i).upLoadImages.toString().substring(1,comment.get(i).upLoadImages.toString().length() -1));
+            comment.get(i).setImages(comment.get(i).upLoadImages.toString().substring(1,comment.get(i).upLoadImages.toString().length() -1).replace(" ",""));
         }
         Map<String, Object> params = new HashMap<>();
         params.put("cmd", "addOrderComment");
@@ -272,11 +272,12 @@ public class AppraiseActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void uoLoad(@NotNull List<String> url) {
         for (int i = 0; i < url.size() ; i++) {
-            url.get(i).replace(" ","");
-            urllist.add(url.get(i));
+//            url.get(i).replace(" ","");
+            urllist.add(url.get(i).replace(" ",""));
         }
         commentBeans.get(positon).upLoadImages.clear();
         commentBeans.get(positon).upLoadImages.addAll(urllist);
+        Log.i(TAG, "uoLoad: "+urllist);
     }
     public void amendurl(int chposition){
         urllist.remove(chposition);

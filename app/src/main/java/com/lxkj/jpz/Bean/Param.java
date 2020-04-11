@@ -21,6 +21,16 @@ public class Param {
 
     private String icon;
 
+    public String getIspifa() {
+        return ispifa;
+    }
+
+    public void setIspifa(String ispifa) {
+        this.ispifa = ispifa;
+    }
+
+    private String ispifa;
+
     public String getStartbuy() {
         return startbuy;
     }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
     private String contentUrl,yzmcode = "fdafgsdgshgshgsah";
     @Override
     protected void initView(Bundle savedInstanceState) {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         setContainer(R.layout.activity_regist);
         setTopTitle(" ");
         tv_login = findViewById(R.id.tv_login);

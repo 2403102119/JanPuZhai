@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -23,15 +24,18 @@ import com.lxkj.jpz.Bean.ProductBuyBean;
 import com.lxkj.jpz.Http.BaseCallback;
 import com.lxkj.jpz.Http.OkHttpHelper;
 import com.lxkj.jpz.Http.SpotsCallBack;
+import com.lxkj.jpz.MainActivity;
 import com.lxkj.jpz.R;
 import com.lxkj.jpz.SQSP;
 import com.lxkj.jpz.Uri.NetClass;
 import com.lxkj.jpz.Utils.SPTool;
 import com.lxkj.jpz.Utils.StringUtil_li;
 import com.lxkj.jpz.Utils.ToastFactory;
+import com.lxkj.jpz.View.AmountView2;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,9 +55,9 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
     private String ispifa;
     private View il_detail;
     private RecyclerView recycle;
-    private TextView tv1,tv2,tv3,tv_count,tv_shi,tv_yunfei,tv_site,tv_name,tv_phone,tv_site_detail,tv_total;
+    private TextView tv1,tv2,tv3,tv_shi,tv_yunfei,tv_site,tv_name,tv_phone,tv_site_detail,tv_total;
     private RoundedImageView image2;
-    private String productid,skuId,count,name,practical,spec,image_icon,address_id,zongji,amount,yunfei,zong;
+    private String productid,skuId,count,name,practical,spec,image_icon,address_id,zongji,amount,yunfei,zong,getAmount,getMinMoney;
     private LinearLayout ll_Address,ll_intent_site;
     private TextView tv_beizhu;
     private ArrayList array,idlist;
@@ -61,6 +65,7 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
     OrderOkAdapter adapter;
     List<Cartbean.DataListBean> list=new ArrayList<>();
     private EditText et_liuyan;
+    private AmountView2 AmountView;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -72,9 +77,9 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
         tv1 = findViewById(R.id.tv1);
         tv2 = findViewById(R.id.tv2);
         tv3 = findViewById(R.id.tv3);
-        tv_count = findViewById(R.id.tv_count);
         image2 = findViewById(R.id.image2);
         tv_shi = findViewById(R.id.tv_shi);
+        AmountView = findViewById(R.id.AmountView);
         tv_yunfei = findViewById(R.id.tv_yunfei);
         tv_site = findViewById(R.id.tv_site);
         ll_Address = findViewById(R.id.ll_Address);
@@ -101,7 +106,164 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
             public void OnItemClickListener(int firstPosition) {
 
             }
+
+            @Override
+            public void Onselect(int Position, String amount1) {
+                int a = 0;
+                BigDecimal bigDecimal2 = null;
+                if (Integer.parseInt(list.get(Position).getCount())>Integer.parseInt(amount1)){
+                    a = 1;
+                    BigDecimal bigDecimal = new BigDecimal(tv_shi.getText().toString());
+                    BigDecimal bigDecimal1 = new BigDecimal(a);
+                    BigDecimal bigDecimal3 = new BigDecimal(list.get(Position).getPrice());
+                    BigDecimal bigDecimal4 = bigDecimal1.multiply(bigDecimal3);
+                    bigDecimal2 = bigDecimal.subtract(bigDecimal4);
+                    tv_shi.setText(bigDecimal2.setScale(2, RoundingMode.HALF_DOWN).toString());
+                    zongji = tv_shi.getText().toString();
+                    if (Float.parseFloat(getAmount)>0) {
+                        if (Float.parseFloat(getMinMoney) < Float.parseFloat(zongji)) {
+                            tv_yunfei.setText(getString(R.string.baoyou));
+                            yunfei = "0";
+                            amount = zongji;
+                            BigDecimal yunfei = new BigDecimal(0);
+                            BigDecimal jiage = new BigDecimal(zongji);
+                            BigDecimal zongji = yunfei.add(jiage);
+                            tv_total.setText(zongji.toString());
+                            tv_beizhu.setText("$" + zongji.toString());
+
+                        } else {
+                            amount = zongji;
+                            tv_yunfei.setText("$" + yunfei);
+                            BigDecimal yunfei1 = new BigDecimal(yunfei);
+                            BigDecimal jiage = new BigDecimal(zongji);
+                            BigDecimal zongji = yunfei1.add(jiage);
+                            tv_total.setText(zongji.toString());
+                            tv_beizhu.setText("$" + zongji.toString());
+                            amount = zongji.toString();
+                        }
+                    }
+                }else  if (Integer.parseInt(list.get(Position).getCount())<Integer.parseInt(amount1)){
+                    a = Integer.parseInt(amount1)-Integer.parseInt(list.get(Position).getCount());
+                    BigDecimal bigDecimal = new BigDecimal(tv_shi.getText().toString());
+                    BigDecimal bigDecimal1 = new BigDecimal(a);
+                    BigDecimal bigDecimal3 = new BigDecimal(list.get(Position).getPrice());
+                    BigDecimal bigDecimal4 = bigDecimal1.multiply(bigDecimal3);
+                    bigDecimal2 = bigDecimal.add(bigDecimal4);
+                    tv_shi.setText(bigDecimal2.setScale(2, RoundingMode.HALF_DOWN).toString());
+                    zongji = tv_shi.getText().toString();
+                    if (Float.parseFloat(getAmount)>0) {
+                        if (Float.parseFloat(getMinMoney) < Float.parseFloat(zongji)) {
+                            tv_yunfei.setText(getString(R.string.baoyou));
+                            yunfei = "0";
+                            amount = zongji;
+                            BigDecimal yunfei = new BigDecimal(0);
+                            BigDecimal jiage = new BigDecimal(zongji);
+                            BigDecimal zongji = yunfei.add(jiage);
+                            tv_total.setText(zongji.toString());
+                            tv_beizhu.setText("$" + zongji.toString());
+
+                        } else {
+                            amount = zongji;
+                            tv_yunfei.setText("$" + yunfei);
+                            BigDecimal yunfei1 = new BigDecimal(yunfei);
+                            BigDecimal jiage = new BigDecimal(zongji);
+                            BigDecimal zongji = yunfei1.add(jiage);
+                            tv_total.setText(zongji.toString());
+                            tv_beizhu.setText("$" + zongji.toString());
+                            amount = zongji.toString();
+                        }
+                    }
+                }else {
+
+                }
+                list.get(Position).setCount(amount1);
+            }
         });
+
+        AmountView.setOnAmountChangeListener(new AmountView2.OnAmountChangeListener() {
+            @Override
+            public void onAmountChange(View view, int amount1) {
+                int a = 0;
+                BigDecimal bigDecimal2 = null;
+                if (Integer.parseInt(count)>amount1){
+                    a = 1;
+                    BigDecimal bigDecimal = new BigDecimal(tv_shi.getText().toString());
+                    BigDecimal bigDecimal1 = new BigDecimal(a);
+                    BigDecimal bigDecimal3 = new BigDecimal(practical);
+                    BigDecimal bigDecimal4 = bigDecimal1.multiply(bigDecimal3);
+                    bigDecimal2 = bigDecimal.subtract(bigDecimal4);
+                    tv_shi.setText(bigDecimal2.setScale(2, RoundingMode.HALF_DOWN).toString());
+                    zongji = tv_shi.getText().toString();
+                    if (Float.parseFloat(getAmount)>0) {
+                        if (Float.parseFloat(getMinMoney) < Float.parseFloat(zongji)) {
+                            tv_yunfei.setText(getString(R.string.baoyou));
+                            yunfei = "0";
+                            amount = zongji;
+                            BigDecimal yunfei = new BigDecimal(0);
+                            BigDecimal jiage = new BigDecimal(zongji);
+                            BigDecimal zongji = yunfei.add(jiage);
+                            tv_total.setText(zongji.toString());
+                            tv_beizhu.setText("$" + zongji.toString());
+
+                        } else {
+                            amount = zongji;
+                            tv_yunfei.setText("$" + yunfei);
+                            BigDecimal yunfei1 = new BigDecimal(yunfei);
+                            BigDecimal jiage = new BigDecimal(zongji);
+                            BigDecimal zongji = yunfei1.add(jiage);
+                            tv_total.setText(zongji.toString());
+                            tv_beizhu.setText("$" + zongji.toString());
+                            amount = zongji.toString();
+                        }
+                    }
+                }else  if (Integer.parseInt(count)<amount1){
+                    a = amount1-Integer.parseInt(count);
+                    BigDecimal bigDecimal = new BigDecimal(tv_shi.getText().toString());
+                    BigDecimal bigDecimal1 = new BigDecimal(a);
+                    BigDecimal bigDecimal3 = new BigDecimal(practical);
+                    BigDecimal bigDecimal4 = bigDecimal1.multiply(bigDecimal3);
+                    bigDecimal2 = bigDecimal.add(bigDecimal4);
+                    tv_shi.setText(bigDecimal2.setScale(2, RoundingMode.HALF_DOWN).toString());
+                    zongji = tv_shi.getText().toString();
+                    if (Float.parseFloat(getAmount)>0) {
+                        if (Float.parseFloat(getMinMoney) < Float.parseFloat(zongji)) {
+                            tv_yunfei.setText(getString(R.string.baoyou));
+                            yunfei = "0";
+                            amount = zongji;
+                            BigDecimal yunfei = new BigDecimal(0);
+                            BigDecimal jiage = new BigDecimal(zongji);
+                            BigDecimal zongji = yunfei.add(jiage);
+                            tv_total.setText(zongji.toString());
+                            tv_beizhu.setText("$" + zongji.toString());
+
+                        } else {
+                            amount = zongji;
+                            tv_yunfei.setText("$" + yunfei);
+                            BigDecimal yunfei1 = new BigDecimal(yunfei);
+                            BigDecimal jiage = new BigDecimal(zongji);
+                            BigDecimal zongji = yunfei1.add(jiage);
+                            tv_total.setText(zongji.toString());
+                            tv_beizhu.setText("$" + zongji.toString());
+                            amount = zongji.toString();
+                        }
+                    }
+                }else {
+
+                }
+                count=String.valueOf(amount1);
+            }
+        });
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+            Intent intent1 = new Intent(OrderOkActivity.this,MainActivity.class);
+            startActivity(intent1);
+            finish();
+        }
+
+        return super.onKeyUp(keyCode, event);
     }
 
     @Override
@@ -126,17 +288,17 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
             tv1.setText(name);
             tv2.setText(getString(R.string.guige)+": "+spec);
             tv3.setText("$"+practical);
-            tv_count.setText("×"+ count);
+            AmountView.setGoodsNubber(count);
             BigDecimal shulaing = new BigDecimal(count);
             BigDecimal jiage = new BigDecimal(practical);
             BigDecimal zong = shulaing.multiply(jiage);
             zongji = zong.toString();
-            tv_shi.setText("$"+zong.toString());
+            tv_shi.setText(zong.toString());
         }else {
             array = (ArrayList) getIntent().getSerializableExtra("list");
             idlist = (ArrayList) getIntent().getSerializableExtra("idlist");
             zong = getIntent().getStringExtra("zong");
-            tv_shi.setText("$"+zong.toString());
+            tv_shi.setText(zong.toString());
             zongji = zong;
             list.clear();
             list.addAll(array);
@@ -215,12 +377,14 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
 
             @Override
             public void onSuccess(Response response, Freightbean resultBean) {
+                getAmount = resultBean.getAmount();
+                getMinMoney = resultBean.getMinMoney();
                 if (Float.parseFloat(resultBean.getAmount())>0){
                     if (Float.parseFloat(resultBean.getMinMoney())<Float.parseFloat(zongji)){
                         tv_yunfei.setText(getString(R.string.baoyou));
                         yunfei = "0";
                         amount = zongji;
-                        BigDecimal yunfei = new BigDecimal(resultBean.getAmount());
+                        BigDecimal yunfei = new BigDecimal(0);
                         BigDecimal jiage = new BigDecimal(zongji);
                         BigDecimal zongji = yunfei.add(jiage);
                         tv_total.setText(zongji.toString());
@@ -315,6 +479,7 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
                 intent.putExtra("type","1");
                 intent.putExtra("moeny",amount);
                 intent.putExtra("orderId",resultBean.getOrderId());
+                intent.putExtra("ispifa",ispifa);
                 startActivity(intent);
             }
 
@@ -343,6 +508,7 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
                 intent.putExtra("type","1");
                 intent.putExtra("moeny",amount);
                 intent.putExtra("orderId",resultBean.getOrderId());
+                intent.putExtra("ispifa",ispifa);
                 startActivity(intent);
             }
 

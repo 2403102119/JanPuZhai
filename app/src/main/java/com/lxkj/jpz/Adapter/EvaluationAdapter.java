@@ -47,16 +47,16 @@ public class EvaluationAdapter extends  RecyclerView.Adapter<EvaluationAdapter.M
 
     @Override
     public void onBindViewHolder(EvaluationAdapter.MyHolder holder, final int position) {
-
-        for (int i = 0; i <list.get(position).getImages().size() ; i++) {
-//            if (StringUtil_li.isSpace(list.get(position).getImages().get(i)))
-                item_list=list.get(position).getImages();
-        }
-        Log.i(TAG, "onBindViewHolder: "+item_list);
+//        item_list.clear();
+//        for (int i = 0; i <list.get(position).getImages().size() ; i++) {
+////            if (StringUtil_li.isSpace(list.get(position).getImages().get(i)))
+//                item_list.add(list.get(position).getImages());
+//        }
+//        Log.i(TAG, "onBindViewHolder: "+item_list);
 
         layoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
         holder.recycle.setLayoutManager(layoutManager);
-        recycleOneItemAdapter=new Recycle_one_itemAdapter(context,item_list);
+        recycleOneItemAdapter=new Recycle_one_itemAdapter(context,list.get(position).getImages());
         holder.recycle.setAdapter(recycleOneItemAdapter);
         recycleOneItemAdapter.setOnItemClickListener(new Recycle_one_itemAdapter.OnItemClickListener() {
             @Override

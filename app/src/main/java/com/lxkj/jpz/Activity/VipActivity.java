@@ -17,7 +17,9 @@ import com.bumptech.glide.request.RequestOptions;
 import com.lxkj.jpz.App;
 import com.lxkj.jpz.Base.BaseActivity;
 import com.lxkj.jpz.Bean.Commonbean;
+import com.lxkj.jpz.Bean.buyPifaBean;
 import com.lxkj.jpz.Bean.pifaInitPageBean;
+import com.lxkj.jpz.Bean.rechargeBalanceBean;
 import com.lxkj.jpz.Bean.vipInitPageBean;
 import com.lxkj.jpz.Http.OkHttpHelper;
 import com.lxkj.jpz.Http.ResultBean;
@@ -39,12 +41,13 @@ public class VipActivity extends BaseActivity implements View.OnClickListener{
 
     private TextView tv_payment,tv_yinpai,tv_jinpai,tv_jiage,tv_quanyi;
     private String type;// 0 vip  1 批发
+    private String jinyin = "0";
     private LinearLayout ll_jinpai,ll_yinpai,ll_vip;
     private View view_jinpai,view_yinpai;
     private String image1,image2,contentUrl1,contentUrl2,money1,money2;
     private RoundedImageView ri_vip;
     private WebView webView;
-    private String amount;
+    private String amount,orderId;
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContainer(R.layout.activity_vip);
@@ -90,16 +93,20 @@ public class VipActivity extends BaseActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tv_payment:
-                Intent intent = new Intent(mContext,RechargeActivity.class);
-                intent.putExtra("type","1");
-                intent.putExtra("moeny",amount);
-                startActivity(intent);
+
+                if (type.equals("0")){
+                    buyVip(amount);
+                }else {
+                    buyPifa(amount);
+                }
                 break;
             case R.id.ll_jinpai://金牌VIP
                 tv_yinpai.setTextColor(getResources().getColor(R.color.grey3));
                 tv_jinpai.setTextColor(getResources().getColor(R.color.red_them));
                 view_jinpai.setVisibility(View.VISIBLE);
                 view_yinpai.setVisibility(View.INVISIBLE);
+
+                jinyin = "0";
 
                 tv_jiage.setText(money1);
                 amount = money1;
@@ -120,14 +127,60 @@ public class VipActivity extends BaseActivity implements View.OnClickListener{
                         .placeholder(R.mipmap.logo))
                         .load(image2)
                         .into(ri_vip);
+                jinyin = "1";
                 tv_jiage.setText(money2);
                 amount = money2;
                 webSetting(contentUrl2);
                 break;
         }
     }
+    //购买批发商
+    private void buyPifa(String money) {
+        Map<String, String> params = new HashMap<>();
+        params.put("cmd", "buyPifa");
+        params.put("uid", SPTool.getSessionValue(SQSP.uid));
+        params.put("money",money);
 
+        OkHttpHelper.getInstance().post_json(mContext, NetClass.BASE_URL, params, new SpotsCallBack<buyPifaBean>(mContext) {
+            @Override
+            public void onSuccess(Response response, buyPifaBean resultBean) {
+                Intent intent = new Intent(mContext,RechargeActivity.class);
+                intent.putExtra("type","2");
+                intent.putExtra("moeny",amount);
+                intent.putExtra("orderId",resultBean.getOrderId());
+                startActivity(intent);
+            }
 
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+        });
+    }
+    //购买vip
+    private void buyVip(String money) {
+        Map<String, String> params = new HashMap<>();
+        params.put("cmd", "buyVip");
+        params.put("uid", SPTool.getSessionValue(SQSP.uid));
+        params.put("money",money);
+        params.put("type",jinyin);
+
+        OkHttpHelper.getInstance().post_json(mContext, NetClass.BASE_URL, params, new SpotsCallBack<buyPifaBean>(mContext) {
+            @Override
+            public void onSuccess(Response response, buyPifaBean resultBean) {
+                Intent intent = new Intent(mContext,RechargeActivity.class);
+                intent.putExtra("type","2");
+                intent.putExtra("moeny",amount);
+                intent.putExtra("orderId",resultBean.getOrderId());
+                startActivity(intent);
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+        });
+    }
     //申请vip页
     private void vipInitPage() {
         Map<String, String> params = new HashMap<>();

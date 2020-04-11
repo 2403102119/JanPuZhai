@@ -61,7 +61,6 @@ public class BrokerageActivity extends BaseActivity implements View.OnClickListe
 
         recycle = findViewById(R.id.recycle);
         tv_code = findViewById(R.id.tv_code);
-        tv_money = findViewById(R.id.tv_money);
         tv_one = findViewById(R.id.tv_one);
         smart = findViewById(R.id.smart);
         tv_login = findViewById(R.id.tv_login);
@@ -145,11 +144,11 @@ public class BrokerageActivity extends BaseActivity implements View.OnClickListe
         OkHttpHelper.getInstance().post_json(mContext, NetClass.BASE_URL, params, new SpotsCallBack<Brokeragebean>(mContext) {
             @Override
             public void onSuccess(Response response, Brokeragebean resultBean) {
-                tv_money.setText(resultBean.getBalance());
+                tv_code.setText("$"+resultBean.getBalance());
 
                 smart.finishRefresh();
 
-                totalPage = Integer.parseInt(resultBean.getTotalPage());
+                totalPage = resultBean.getTotalPage();
                 if (pageNoIndex == 1) {
                     list.clear();
                 }

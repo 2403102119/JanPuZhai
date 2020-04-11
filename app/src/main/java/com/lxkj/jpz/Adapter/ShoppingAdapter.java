@@ -83,6 +83,12 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.MyHold
         }else {
             holder.imageSel.setImageResource(R.mipmap.weixuan);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.Onxiangqing(position);
+            }
+        });
     }
 
     @Override
@@ -121,6 +127,7 @@ public class ShoppingAdapter extends RecyclerView.Adapter<ShoppingAdapter.MyHold
         void OnDetal(int position);
         void Onselect(int position,String mount);
         void OnDelate(int position);
+        void Onxiangqing(int position);
 
     }
 

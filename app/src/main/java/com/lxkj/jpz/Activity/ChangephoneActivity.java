@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.lxkj.jpz.Base.BaseActivity;
+import com.lxkj.jpz.Bean.Checkphonebean;
 import com.lxkj.jpz.Bean.Yzmcodebean;
 import com.lxkj.jpz.Http.OkHttpHelper;
 import com.lxkj.jpz.Http.ResultBean;
@@ -82,15 +83,39 @@ public class ChangephoneActivity extends BaseActivity implements View.OnClickLis
                     showToast(getString(R.string.new_password));
                     return;
                 }
-                getValidateCode(et_phone.getText().toString());
+                checkPhone(et_phone.getText().toString());
                 break;
         }
+    }
+    //验证手机号是否注册
+    private void checkPhone(final String phone) {
+        Map<String, String> params = new HashMap<>();
+        params.put("cmd","checkPhone");
+        params.put("phone", phone);
+        OkHttpHelper.getInstance().post_json(mContext, NetClass.BASE_URL, params, new SpotsCallBack<Checkphonebean>(mContext) {
+            @Override
+            public void onSuccess(Response response, Checkphonebean resultBean) {
+                if (resultBean.getExistence().equals("0")){
+                    getValidateCode(phone);
+                }else {
+                    showToast(getString(R.string.The_phone_number_already_exists));
+                }
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+        });
+
+
     }
     //获取验证码
     private void getValidateCode(String phone) {
         Map<String, String> params = new HashMap<>();
         params.put("cmd","getValidateCode");
         params.put("phone", phone);
+        params.put("type", "0");
         OkHttpHelper.getInstance().post_json(mContext, NetClass.BASE_URL, params, new SpotsCallBack<Yzmcodebean>(mContext) {
             @Override
             public void onSuccess(Response response, Yzmcodebean resultBean) {

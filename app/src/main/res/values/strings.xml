@@ -299,4 +299,7 @@
     <string name="chakanxiangqing">查看详情</string>
     <string name="tuichu">再按一次退出程序</string>
     <string name="wangluo">网络不佳</string>
+    <string name="shohuoren">收货人: </string>
+    <string name="shangpinsousuo">商品搜索</string>
+    <string name="nindedingdanyiwancheng">您的订单已完成</string>
 </resources>

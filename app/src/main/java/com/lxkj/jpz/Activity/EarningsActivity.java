@@ -137,7 +137,7 @@ public class EarningsActivity extends BaseActivity implements View.OnClickListen
 
                 smart.finishRefresh();
 
-                totalPage = Integer.parseInt(resultBean.getTotalPage());
+                totalPage = resultBean.getTotalPage();
                 if (pageNoIndex == 1) {
                     list.clear();
                 }

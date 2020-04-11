@@ -30,11 +30,12 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"/>
         <ScrollView
-            android:layout_marginBottom="57dp"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:layout_marginBottom="57dp"
                 android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -57,6 +58,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="@dimen/dp_15"
+                            android:textStyle="bold"
                             android:gravity="center_vertical"
                             android:text="@string/consignee_information"
                             android:textColor="#111"
@@ -313,6 +315,7 @@
                             android:gravity="center_vertical"
                             android:text="@string/order_information"
                             android:textColor="#111"
+                            android:textStyle="bold"
                             android:textSize="@dimen/sp_14" />
                     </LinearLayout>
                     <LinearLayout
@@ -378,36 +381,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
                                 <TextView
-                                    android:text="付款时间："
+                                    android:text="支付时间："
                                     android:textSize="13sp"
                                     android:textColor="#1A1A1A"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content" />
                                 <TextView
                                     android:id="@+id/tv_fukuan"
-                                    android:text="2019-08-23  12:22:10"
-                                    android:layout_marginLeft="25dp"
-                                    android:textSize="13sp"
-                                    android:textColor="#1A1A1A"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:visibility="gone"
-                                android:id="@+id/ll_shouhuo"
-                                android:layout_marginTop="30dp"
-                                android:layout_marginLeft="10dp"
-                                android:orientation="horizontal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-                                <TextView
-                                    android:text="确认收货："
-                                    android:textSize="13sp"
-                                    android:textColor="#1A1A1A"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content" />
-                                <TextView
-                                    android:id="@+id/tv_shouhuo"
                                     android:text="2019-08-23  12:22:10"
                                     android:layout_marginLeft="25dp"
                                     android:textSize="13sp"
@@ -438,6 +418,30 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content" />
                             </LinearLayout>
+                            <LinearLayout
+                                android:visibility="gone"
+                                android:id="@+id/ll_shouhuo"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginLeft="10dp"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:text="确认收货："
+                                    android:textSize="13sp"
+                                    android:textColor="#1A1A1A"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                                <TextView
+                                    android:id="@+id/tv_shouhuo"
+                                    android:text="2019-08-23  12:22:10"
+                                    android:layout_marginLeft="25dp"
+                                    android:textSize="13sp"
+                                    android:textColor="#1A1A1A"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+
                             <LinearLayout
                                 android:id="@+id/ll_tuikuan"
                                 android:visibility="gone"

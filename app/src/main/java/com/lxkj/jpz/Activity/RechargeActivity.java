@@ -35,8 +35,8 @@ import okhttp3.Response;
 public class RechargeActivity extends BaseActivity implements View.OnClickListener, PayPwdView.InputCallBack{
 
     private TextView tv_login,tv_money;
-    private String type;// 0 充值  1  支付
-    private String moeny;
+    private String type1;// 0 充值  1  支付
+    private String moeny,ispifa;
     private String zhifufangshi = "0",orderId;
     private LinearLayout ll_fukuan,ll_chonghzi,ll_weixin,ll_zhifubao,ll_paypal,ll_yue,ll_xianxia;
     private EditText et_jine;
@@ -77,9 +77,16 @@ public class RechargeActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     protected void initData() {
-        type = getIntent().getStringExtra("type");
+        type1 = getIntent().getStringExtra("type");
         orderId = getIntent().getStringExtra("orderId");
-        if (type.equals("0")){
+        if (!StringUtil_li.isSpace(getIntent().getStringExtra("ispifa"))){
+            ispifa = getIntent().getStringExtra("ispifa");
+            if (ispifa.equals("1")&&SPTool.getSessionValue(SQSP.ispifa).equals("3")){
+                ll_xianxia.setVisibility(View.VISIBLE);
+                v2.setVisibility(View.VISIBLE);
+            }
+        }
+        if (type1.equals("0")){
             setTopTitle(getString(R.string.top_up));
             tv_login.setText(getString(R.string.top_up));
             ll_fukuan.setVisibility(View.GONE);
@@ -103,7 +110,7 @@ public class RechargeActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tv_login:
-                if (type.equals("0")){
+                if (type1.equals("0")){
                     if (StringUtil_li.isSpace(et_jine.getText().toString())){
                         showToast(getString(R.string.qingshuruchongzhijine));
                         return;
@@ -170,6 +177,7 @@ public class RechargeActivity extends BaseActivity implements View.OnClickListen
                 im_paypal.setImageResource(R.mipmap.weixuan);
                 im_yue.setImageResource(R.mipmap.weixuan);
                 im_xianxia.setImageResource(R.mipmap.xuanzhong);
+                payBalance(zhifufangshi,moeny,orderId,"");
                 break ;
         }
     }
@@ -206,9 +214,17 @@ public class RechargeActivity extends BaseActivity implements View.OnClickListen
         OkHttpHelper.getInstance().post_json(mContext, NetClass.BASE_URL, params, new SpotsCallBack<rechargeBalanceBean>(mContext) {
             @Override
             public void onSuccess(Response response, rechargeBalanceBean resultBean) {
-               Intent intent = new Intent(mContext,PayOkActivity.class);
-               startActivity(intent);
+                if (type1.equals("2")){
+                    Intent intent = new Intent(mContext,PayOkActivity.class);
+                    intent.putExtra("type",type1);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(mContext,PayOkActivity.class);
+                    startActivity(intent);
+                }
 
+               PayFragment fragment = new PayFragment();
+                fragment.dismiss();
             }
 
             @Override
@@ -237,6 +253,7 @@ public class RechargeActivity extends BaseActivity implements View.OnClickListen
             }
         });
     }
+
     @Override
     public void onInputFinish(String result) {
         if (SPTool.getSessionValue(SQSP.setPwd).equals("0")){
@@ -244,5 +261,6 @@ public class RechargeActivity extends BaseActivity implements View.OnClickListen
         }else {
             payBalance(zhifufangshi,moeny,orderId,result);
         }
+
     }
 }

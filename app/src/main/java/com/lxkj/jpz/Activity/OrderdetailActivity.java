@@ -41,7 +41,7 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
 
     private TextView tv_detaile,tv_state,tv_name,tv_phone,tv_receiverAddress,tv_yunfei,tv_shi,tv_paytype,tv_beizhu,tv_number,tv_createdDate,tv_shangpinshuliang;
     private TextView tv_fukuan,tv_fahuo,tv_tuikuan,tv_shouhuo,tv_zongji;
-    private String orderid;
+    private String orderid,ispifa;
     private RecyclerView recycle;
     LinearLayoutManager layoutManager;
     OrderdetailAdapter adapter;
@@ -148,6 +148,7 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
                     intent.putExtra("moeny",amount);
                     intent.putExtra("type","2");
                     intent.putExtra("orderId",orderid);
+                    intent.putExtra("ispifa",ispifa);
                     startActivity(intent);
                 }else if (tv_detaile.getText().toString().equals(getString(R.string.qupingjia))){
                     Intent intent1 = new Intent(OrderdetailActivity.this,AppraiseActivity.class);
@@ -174,6 +175,10 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
                     intent2.putExtra("emscode",emscode);
                     intent2.putExtra("expCode",expCode);
                     startActivity(intent2);
+                }else if (rightText.getText().toString().equals(getString(R.string.qupingjia))){
+                    Intent intent1 = new Intent(OrderdetailActivity.this,AppraiseActivity.class);
+                    intent1.putExtra("orderid",orderid);
+                    startActivity(intent1);
                 }
                 break;
         }
@@ -191,6 +196,7 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
                 emsno = resultBean.getOrderDetail().getEmsno();
                 emscode = resultBean.getOrderDetail().getEmscode();
                 expCode = resultBean.getOrderDetail().getEmsname();
+                ispifa = resultBean.getOrderDetail().getIspifa();
                 tv_shangpinshuliang.setText(getString(R.string.gongji)+resultBean.getOrderDetail().getOrderItem().size()+getString(R.string.jianshangpin));
                 if (resultBean.getOrderDetail().getStatus().equals("0")){//待付款
                     tv_state.setText(getString(R.string.dengdaimaijiafukuan));
@@ -207,13 +213,14 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
                     tv_state.setText(getString(R.string.dingdanyifahuo));
                     rightText.setText(getString(R.string.shenqingtuikuan));
                     ll_qufukuan.setVisibility(View.VISIBLE);
-                    tv_detaile.setText(getString(R.string.querenshouhuo));
+                    tv_detaile.setText(getString(R.string.quedingshouhuo));
 
                 }else if (resultBean.getOrderDetail().getStatus().equals("3")){//待评价
-                    tv_state.setText("");
-                    rightText.setText(getString(R.string.chakanwuliu));
+                    tv_state.setText(getString(R.string.nindedingdanyiwancheng));
+                    rightText.setVisibility(View.VISIBLE);
                     ll_qufukuan.setVisibility(View.VISIBLE);
                     tv_detaile.setText(getString(R.string.qupingjia));
+                    rightText.setText(getString(R.string.qupingjia));
 
                 }else if (resultBean.getOrderDetail().getStatus().equals("4")){//已完成
                     tv_state.setText(getString(R.string.jiaoyiyiwanchng));
@@ -241,7 +248,7 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
                     ll_qufukuan.setVisibility(View.GONE);
                 }
 
-                tv_name.setText(resultBean.getOrderDetail().getReceiverName());
+                tv_name.setText(getString(R.string.shohuoren)+resultBean.getOrderDetail().getReceiverName());
                 tv_phone.setText(resultBean.getOrderDetail().getReceiverPhone());
                 tv_receiverAddress.setText(resultBean.getOrderDetail().getReceiverAddress());
                 list.clear();
@@ -253,8 +260,13 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
                 if (resultBean.getOrderDetail().getPayType().equals("0")){
                     tv_paytype.setText("微信支付");
                 }else if (resultBean.getOrderDetail().getPayType().equals("1")){
-                    tv_paytype.setText("支付宝支付");
+                    tv_paytype.setText("paypal支付");
+                }else  if (resultBean.getOrderDetail().getPayType().equals("2")){
+                    tv_paytype.setText("线下支付");
+                }else  if (resultBean.getOrderDetail().getPayType().equals("3")){
+                    tv_paytype.setText("余额支付");
                 }
+
                 tv_beizhu.setText(resultBean.getOrderDetail().getRemark());
 //                tv_number.setText(resultBean.getOrderDetail().getEmscode());
 

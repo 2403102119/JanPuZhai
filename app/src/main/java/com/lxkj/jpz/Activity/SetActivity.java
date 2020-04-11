@@ -276,6 +276,10 @@ public class SetActivity extends BaseActivity implements View.OnClickListener{
                 verCode = APKVersionCodeUtils.getVersionCode(SetActivity.this);
                 Log.i(TAG, "onSuccess: "+verCode);
 
+                if (verCode ==numberServer){
+                    showToast("当前已是最新版本");
+                }
+
                 //int newVerName = Integer.parseInt(verName.replace(".", ""));//1.1----11
 
 

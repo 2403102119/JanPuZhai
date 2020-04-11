@@ -67,7 +67,7 @@
                             android:layout_height="wrap_content" />
                         <TextView
                             android:id="@+id/tv_pifashang"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             android:layout_marginTop="@dimen/dp_2"
                             android:layout_marginLeft="@dimen/dp_5"
                             android:text="@string/pifashang"
@@ -245,6 +245,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/all"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -265,6 +266,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/obligation"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -285,6 +287,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/To_send_the_goods"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -306,6 +309,7 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/wait_for_receiving"
                         android:gravity="center"
+                        android:textSize="13sp"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -327,6 +331,7 @@
                         android:text="@string/remain_to_be_evaluated"
                         android:textColor="#000000"
                         android:gravity="center"
+                        android:textSize="13sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -397,7 +402,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/The_balance_of_my"
-                        android:textSize="12sp"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -418,7 +423,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/My_income"
-                        android:textSize="12sp"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -440,7 +445,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/my_favorite"
-                        android:textSize="12sp"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -461,7 +466,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/contact_us"
-                        android:textSize="12sp"
+                        android:textSize="13sp"
                         android:textColor="#000000"
                         android:gravity="center"
                         android:layout_width="wrap_content"
@@ -491,7 +496,7 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/My_evaluation"
                         android:textColor="#000000"
-                        android:textSize="12sp"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -511,7 +516,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/My_invitation"
-                        android:textSize="12sp"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -533,7 +538,7 @@
                     <TextView
                         android:layout_marginTop="10dp"
                         android:text="@string/shipping_address"
-                        android:textSize="12sp"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:textColor="#000000"
                         android:layout_width="wrap_content"
@@ -556,7 +561,7 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/set"
                         android:textColor="#000000"
-                        android:textSize="12sp"
+                        android:textSize="13sp"
                         android:gravity="center"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />

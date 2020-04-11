@@ -66,7 +66,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContainer(R.layout.activity_search);
-        baseTop.setVisibility(View.GONE);
+        setTopTitle("商品搜索");
         tv_search = findViewById(R.id.tv_search);
         flow = findViewById(R.id.flow);
         flow_dajia = findViewById(R.id.flow_dajia);

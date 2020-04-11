@@ -13,6 +13,7 @@ import com.lxkj.jpz.App;
 import com.lxkj.jpz.Bean.Cartbean;
 import com.lxkj.jpz.R;
 import com.lxkj.jpz.Utils.StringUtil_li;
+import com.lxkj.jpz.View.AmountView2;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.List;
@@ -45,13 +46,18 @@ public class OrderOkAdapter  extends  RecyclerView.Adapter<OrderOkAdapter.MyHold
                 .load(list.get(position).getImage())
                 .into(holder.image2);
         if (!StringUtil_li.isSpace(list.get(position).getSkuName2())){
-            holder.tv2.setText("规格："+list.get(position).getSkuName1()+" "+list.get(position).getSkuName2());
+            holder.tv2.setText(""+list.get(position).getSkuName1()+" "+list.get(position).getSkuName2());
         }else {
-            holder.tv2.setText("规格："+list.get(position).getSkuName1());
+            holder.tv2.setText(""+list.get(position).getSkuName1());
         }
-
+        holder.AmountView.setGoodsNubber(list.get(position).getCount());
+        holder.AmountView.setOnAmountChangeListener(new AmountView2.OnAmountChangeListener() {
+            @Override
+            public void onAmountChange(View view, int amount) {
+                onItemClickListener.Onselect(position,amount+"");
+            }
+        });
         holder.tv1.setText(list.get(position).getProductName());
-        holder.tv_count.setText("×"+list.get(position).getCount());
         holder.tv3.setText("¥"+list.get(position).getPrice());
     }
 
@@ -68,6 +74,7 @@ public class OrderOkAdapter  extends  RecyclerView.Adapter<OrderOkAdapter.MyHold
     public class MyHolder extends RecyclerView.ViewHolder {
         RoundedImageView image2;
         TextView tv1,tv2,tv_number,tv_count,tv3;
+        AmountView2 AmountView;
         public MyHolder(View itemView) {
             super(itemView);
             image2 = itemView.findViewById(R.id.image2);
@@ -76,6 +83,7 @@ public class OrderOkAdapter  extends  RecyclerView.Adapter<OrderOkAdapter.MyHold
             tv_number = itemView.findViewById(R.id.tv_number);
             tv_count = itemView.findViewById(R.id.tv_count);
             tv3 = itemView.findViewById(R.id.tv3);
+            AmountView = itemView.findViewById(R.id.AmountView);
         }
     }
     private OrderOkAdapter.OnItemClickListener onItemClickListener;
@@ -86,5 +94,6 @@ public class OrderOkAdapter  extends  RecyclerView.Adapter<OrderOkAdapter.MyHold
 
     public interface OnItemClickListener {
         void OnItemClickListener(int firstPosition);
+        void Onselect(int Position,String amount);
     }
 }

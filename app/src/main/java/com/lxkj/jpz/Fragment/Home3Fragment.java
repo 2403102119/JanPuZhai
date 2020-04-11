@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.lxkj.jpz.Activity.DeatilsActivity;
 import com.lxkj.jpz.Activity.LoginActivity;
 import com.lxkj.jpz.Activity.OrderOkActivity;
 import com.lxkj.jpz.Adapter.ShoppingAdapter;
@@ -70,6 +71,8 @@ public class Home3Fragment extends BaseFragment implements View.OnClickListener{
     private SmartRefreshLayout smart;
     private int pageNoIndex = 1;
     private int totalPage = 1;
+    public static final int DELAY = 1000;
+    private static long lastClickTime = 0;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_colleg, container, false);
@@ -182,6 +185,19 @@ public class Home3Fragment extends BaseFragment implements View.OnClickListener{
                 cartidlist.clear();
                 cartidlist.add(list.get(position).getCartId());
                 actionDialog.show();
+            }
+
+            @Override
+            public void Onxiangqing(int position) {
+                long currentTime = System.currentTimeMillis();
+                if (currentTime - lastClickTime > DELAY) {
+                    lastClickTime = currentTime;
+                    Intent intent = new Intent(getContext(), DeatilsActivity.class);
+                    intent.putExtra("productid",list.get(position).getProductId());
+                    startActivity(intent);
+                } else {
+
+                }
             }
         });
     }

@@ -64,6 +64,16 @@ public class Orderdetailbean extends ResultBean {
         private String status;
         private String payDate;
 
+        public String getIspifa() {
+            return ispifa;
+        }
+
+        public void setIspifa(String ispifa) {
+            this.ispifa = ispifa;
+        }
+
+        private String ispifa;
+
 
         private List<OrderItemBean> orderItem;
 

@@ -597,6 +597,7 @@ public class DeatilsActivity extends BaseActivity implements View.OnClickListene
                 image_icon = resultBean.getProductDetail().getProductImages().get(0);
                 param.setPrice(resultBean.getProductDetail().getPrice());
                 param.setStartbuy(resultBean.getProductDetail().getStartbuy());
+                param.setIspifa(resultBean.getProductDetail().getIspifa());
 
                 tuijian_list.clear();
                 tuijian_list.addAll(resultBean.getRecommentList());

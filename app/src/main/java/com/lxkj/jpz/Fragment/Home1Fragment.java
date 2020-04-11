@@ -89,7 +89,8 @@ public class Home1Fragment extends BaseFragment implements View.OnClickListener,
     private LinearLayout ll_relation,ll_vip;
     private ImageView im_return;
     private String image_tejia,image_jingpin,image_zhekou,image_shangpin;
-
+    public static final int DELAY = 1000;
+    private static long lastClickTime = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -167,9 +168,16 @@ public class Home1Fragment extends BaseFragment implements View.OnClickListener,
 
             @Override
             public void OnDetailClickListener(int position, int item_position) {
-                Intent intent = new Intent(getContext(), DeatilsActivity.class);
-                intent.putExtra("productid",list.get(position).getPList().get(item_position).getProductid());
-                startActivity(intent);
+                long currentTime = System.currentTimeMillis();
+                if (currentTime - lastClickTime > DELAY) {
+                    lastClickTime = currentTime;
+                    Intent intent = new Intent(getContext(), DeatilsActivity.class);
+                    intent.putExtra("productid",list.get(position).getPList().get(item_position).getProductid());
+                    startActivity(intent);
+                } else {
+
+                }
+
             }
 
         });

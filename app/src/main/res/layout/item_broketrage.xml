@@ -43,6 +43,7 @@
         <TextView
             android:id="@+id/tv_amount"
             android:text="0.2"
+            android:textStyle="bold"
             android:textSize="13sp"
             android:textColor="@color/grey3"
             android:layout_width="wrap_content"

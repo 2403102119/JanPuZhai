@@ -137,35 +137,42 @@
             app:srb_stepSize="1"
             app:srb_drawBorderEnabled="false"
             app:srb_starBackgroundColor="#c0c0c0"
-            app:srb_fillColor="@color/red_them"/>
+            app:srb_fillColor="@color/star"/>
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="17dp"
-        android:background="@drawable/biankuang9"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/editFeed"
-            android:padding="12dp"
-            android:gravity="top"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:maxLines="150"
-            android:hint="为了下次更好的相遇，留下你的建议吧！！！"
-            android:background="@null"
+        <LinearLayout
+            android:background="@drawable/biankuang"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="112dp" />
-        <TextView
-            android:text="0~150字"
-            android:layout_gravity="right"
-            android:textSize="10sp"
-            android:textColor="#999999"
-            android:layout_marginRight="6.5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content">
+            <EditText
+                android:background="@null"
+                android:id="@+id/editFeed"
+                android:padding="12dp"
+                android:gravity="top"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:maxLines="150"
+                android:hint="为了下次更好的相遇，留下你的建议吧！！！"
+                android:layout_width="match_parent"
+                android:layout_height="112dp" />
+            <TextView
+                android:text="0~150字"
+                android:layout_gravity="right"
+                android:textSize="10sp"
+                android:textColor="#999999"
+                android:layout_marginRight="6.5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
         <com.lxkj.jpz.View.FeedBackGridView
             android:id="@+id/photo1"
+            android:layout_marginTop="@dimen/dp_5"
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

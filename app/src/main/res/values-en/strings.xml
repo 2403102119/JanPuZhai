@@ -299,4 +299,7 @@
 	<string name="chakanxiangqing">view details</string>
 	<string name="tuichu">Press exit again</string>
 	<string name="wangluo">Poor network</string>
+	<string name="shohuoren">consignee: </string>
+	<string name="shangpinsousuo">Commodity search</string>
+	<string name="nindedingdanyiwancheng">Your order has been completed</string>
 </resources>

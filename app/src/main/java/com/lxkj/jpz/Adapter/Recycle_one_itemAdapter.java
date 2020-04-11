@@ -38,12 +38,11 @@ public class Recycle_one_itemAdapter extends  RecyclerView.Adapter<Recycle_one_i
     @Override
     public void onBindViewHolder(Recycle_one_itemAdapter.MyHolder holder, final int position) {
         if (0!=list.size())
-//            Glide.with(context).load(list.get(position)).into(holder.image1);
             Glide.with(context).applyDefaultRequestOptions(new RequestOptions()
                     .centerCrop()
                     .error(R.mipmap.logo)
                     .placeholder(R.mipmap.logo))
-                    .load(list.get(position))
+                    .load(list.get(position).replace(" ",""))
                     .into(holder.image1);
 
         Log.i(TAG, "onBindViewHolder: "+list);

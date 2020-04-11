@@ -66,12 +66,13 @@ public class AppraiseAdapter extends  RecyclerView.Adapter<AppraiseAdapter.MyHol
                 .load(list.get(position).getProductImage())
                 .into(holder.image2);
         holder.tv1.setText(list.get(position).getProductName());
-        holder.tv2.setText("规格："+list.get(position).getProductSkuName1()+"  "+list.get(position).getProductSkuName2());
+
+        holder.tv2.setText(list.get(position).getProductSkuName1());
         holder.tv_number.setText("×"+list.get(position).getProductCount());
         holder.tv3.setText("共"+list.get(position).getProductCount()+"件");
         BigDecimal privice = new BigDecimal(list.get(position).getProductPrice());
         BigDecimal count = new BigDecimal(list.get(position).getProductCount());
-        holder.tv_money.setText("合计: ¥"+privice.multiply(count).toString());
+        holder.tv_money.setText("合计: $"+privice.multiply(count).toString());
 
 
 

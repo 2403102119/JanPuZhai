@@ -42,9 +42,9 @@ public class Broketragedapter extends RecyclerView.Adapter<Broketragedapter.MyHo
         holder.tv_nickName.setText(list.get(position).getTitle());
         holder.tv_adtime.setText(list.get(position).getAdtime());
         if (list.get(position).getType().equals("0")){
-            holder.tv_amount.setText("+$"+list.get(position).getAmount()+"元");
+            holder.tv_amount.setText("+$"+list.get(position).getAmount());
         }else {
-            holder.tv_amount.setText("-$"+list.get(position).getAmount()+"元");
+            holder.tv_amount.setText("-$"+list.get(position).getAmount());
         }
 
     }

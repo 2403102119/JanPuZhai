@@ -260,6 +260,7 @@ public class RefundActivity extends BaseActivity implements View.OnClickListener
             @Override
             public void OnItemClickListener(int firstPosition) {
                 tv_yuanyin.setText(causelist.get(firstPosition).getTitle());
+                reason = causelist.get(firstPosition).getTitle();
                 popupWindow2.dismiss();
                 ll_all.clearAnimation();
             }
