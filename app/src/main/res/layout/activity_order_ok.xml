@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content">
                         <TextView
                             android:id="@+id/tv_site_detail"
-                            android:text="河南省郑州市金水区商都路通展路商都世贸中心D座2202室"
+                            android:text=""
                             android:textSize="12sp"
                             android:textColor="#666666"
                             android:layout_marginLeft="10dp"
@@ -63,7 +63,7 @@
                             android:layout_height="wrap_content">
                             <TextView
                                 android:id="@+id/tv_name"
-                                android:text="吴小帅"
+                                android:text=""
                                 android:textSize="12sp"
                                 android:textColor="#666666"
                                 android:layout_width="wrap_content"

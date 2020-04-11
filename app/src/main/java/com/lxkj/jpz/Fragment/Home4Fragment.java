@@ -312,16 +312,21 @@ public class Home4Fragment extends BaseFragment implements View.OnClickListener{
                 emile = resultBean.getDataObject().getEmail();
                 SPTool.addSessionMap(SQSP.setPwd, resultBean.getDataObject().getSetPwd());
 
+
                 if (resultBean.getDataObject().getIdentify().equals("0")){
                     tv_pifashang.setVisibility(View.GONE);
                     im_vip.setVisibility(View.GONE);
+                    SPTool.addSessionMap(SQSP.ispifa,"0");
                 }else if (resultBean.getDataObject().getIdentify().equals("1")){
                     tv_pifashang.setVisibility(View.GONE);
                     im_vip.setVisibility(View.VISIBLE);
+                    SPTool.addSessionMap(SQSP.ispifa,"1");
                 }else if (resultBean.getDataObject().getIdentify().equals("2")){
                     tv_pifashang.setVisibility(View.GONE);
                     im_vip.setVisibility(View.VISIBLE);
+                    SPTool.addSessionMap(SQSP.ispifa,"2");
                 }else {
+                    SPTool.addSessionMap(SQSP.ispifa,"3");
                     tv_pifashang.setVisibility(View.VISIBLE);
                     im_vip.setVisibility(View.GONE);
                 }

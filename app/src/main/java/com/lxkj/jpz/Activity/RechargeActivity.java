@@ -37,7 +37,7 @@ public class RechargeActivity extends BaseActivity implements View.OnClickListen
     private TextView tv_login,tv_money;
     private String type;// 0 充值  1  支付
     private String moeny;
-    private String zhifufangshi,orderId;
+    private String zhifufangshi = "0",orderId;
     private LinearLayout ll_fukuan,ll_chonghzi,ll_weixin,ll_zhifubao,ll_paypal,ll_yue,ll_xianxia;
     private EditText et_jine;
     private ImageView im_weixin,im_zhifubao,im_paypal,im_yue,im_xianxia;

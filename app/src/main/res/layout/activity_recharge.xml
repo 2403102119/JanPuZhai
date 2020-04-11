@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
         <TextView
-            android:text="需支付"
+            android:text="@string/xuzhifu"
             android:textSize="13sp"
             android:layout_marginTop="15dp"
             android:textColor="@color/red_them"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
     <TextView
-        android:text="选择支付方式"
+        android:text="@string/xuanzezhifufangshi"
         android:textSize="13sp"
         android:textColor="@color/grey_999"
         android:layout_marginTop="45.5dp"
@@ -88,7 +88,7 @@
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/im_weixin"
-            android:src="@mipmap/weixuan"
+            android:src="@mipmap/xuanzhong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView

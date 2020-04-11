@@ -162,7 +162,7 @@
           android:layout_marginBottom="5dp"
           android:background="@drawable/biankuang7"
           android:gravity="center"
-          android:text="加入购物车"
+          android:text="@string/jiarugouwuche"
           android:textColor="@color/grey_666"
           android:textSize="14sp" />
       <TextView
@@ -176,7 +176,7 @@
           android:layout_marginBottom="5dp"
           android:background="@drawable/biankuang6"
           android:gravity="center"
-          android:text="立即购买"
+          android:text="@string/lijigoumai"
           android:textColor="@color/red_them"
           android:textSize="14sp" />
   </LinearLayout>

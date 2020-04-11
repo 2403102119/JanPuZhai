@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding="15dp"
+    android:padding="48dp"
     tools:context="com.lxkj.jpz.Activity.ForgetActivity">
     <TextView
         android:text="@string/retrieve_password"
@@ -129,7 +129,7 @@
         android:background="#E5E5E5" />
     <TextView
         android:id="@+id/tv_login"
-        android:layout_width="287dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"

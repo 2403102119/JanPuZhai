@@ -68,9 +68,10 @@ public class EvaluationAdapter extends  RecyclerView.Adapter<EvaluationAdapter.M
         Glide.with(App.context).applyDefaultRequestOptions(new RequestOptions()
                 .error(R.mipmap.ic_figure_head)
                 .placeholder(R.mipmap.ic_figure_head))
-                .load(SQSP.user_icon)
+                .load(list.get(position).getLogo())
                 .into(holder.im_userIcon);
        holder.tv_nickName.setText(list.get(position).getTitle());
+       holder.tv_adtime.setText(list.get(position).getAdtime());
 
         holder.rb.setRating(Float.parseFloat(list.get(position).getScore()));
 
@@ -93,7 +94,7 @@ public class EvaluationAdapter extends  RecyclerView.Adapter<EvaluationAdapter.M
     public class MyHolder extends RecyclerView.ViewHolder {
         RecyclerView recycle;
         ImageView im_userIcon;
-        TextView tv_nickName,tv_content;
+        TextView tv_nickName,tv_content,tv_adtime;
         SimpleRatingBar rb;
         public MyHolder(View itemView) {
             super(itemView);
@@ -102,6 +103,7 @@ public class EvaluationAdapter extends  RecyclerView.Adapter<EvaluationAdapter.M
             tv_nickName = itemView.findViewById(R.id.tv_nickName);
             rb = itemView.findViewById(R.id.rb);
             tv_content = itemView.findViewById(R.id.tv_content);
+            tv_adtime = itemView.findViewById(R.id.tv_adtime);
         }
     }
     private EvaluationAdapter.OnItemClickListener onItemClickListener;

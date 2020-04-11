@@ -175,13 +175,13 @@ public class ClassifyActivity extends BaseActivity implements View.OnClickListen
                         imm.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
                     }
                     if (!TextUtils.isEmpty(et_search.getText().toString())) {
-                        if (type.equals("0")){
+//                        if (type.equals("0")){
                             searchProduct(et_search.getText().toString(),position1,"1");
-                        }else {
-                            productList(categoryId,position1,"1");
-                        }
+//                        }else {
+//                            productList(categoryId,position1,"1");
+//                        }
                     } else {
-                        ToastFactory.getToast(mContext, "关键字不能为空").show();
+                        ToastFactory.getToast(mContext, getString(R.string.guanjianzibunengweikong)).show();
                     }
                     return true;
                 }

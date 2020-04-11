@@ -242,7 +242,7 @@ public class OrderOkActivity extends BaseActivity implements View.OnClickListene
                     amount = zongji;
                     tv_yunfei.setText(getString(R.string.baoyou));
                     tv_beizhu.setText("$"+zongji.toString());
-                    tv_total.setText("$"+zongji.toString());
+                    tv_total.setText(zongji.toString());
                 }
 
             }

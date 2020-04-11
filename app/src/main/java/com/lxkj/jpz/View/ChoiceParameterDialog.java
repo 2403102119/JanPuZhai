@@ -1,5 +1,6 @@
 package com.lxkj.jpz.View;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,6 +27,8 @@ import com.bumptech.glide.request.RequestOptions;
 import com.lxkj.jpz.Bean.Param;
 import com.lxkj.jpz.Bean.ParameterEntity;
 import com.lxkj.jpz.R;
+import com.lxkj.jpz.SQSP;
+import com.lxkj.jpz.Utils.SPTool;
 import com.lxkj.jpz.Utils.StringUtil_li;
 import com.lxkj.jpz.Utils.Utils;
 
@@ -87,6 +90,7 @@ public class ChoiceParameterDialog extends Dialog {
         setData();
     }
 
+    @SuppressLint("StringFormatInvalid")
     private void setData() {
         outMap = new HashMap<>();
         for (int i = 0; i < specList.size(); i++) {
@@ -103,15 +107,15 @@ public class ChoiceParameterDialog extends Dialog {
         adapter = new SpecAdapter( specList);
         rv.setAdapter(adapter);
             etCount.setText(qpl + "");
-            tvQpl.setText(String.format("购买数量", qpl));
+            tvQpl.setText(String.format(context.getString(R.string.goumaishulaing), qpl));
             checkEnable();
 
 
     }
 
     private void setPrice(String priceString,String count) {
-        tvPrice.setText("¥ "+priceString);
-        tvTitle.setText("库存： "+count);
+        tvPrice.setText("$"+priceString);
+        tvTitle.setText(context.getString(R.string.kucun)+"： "+count);
     }
 
     private void init() {
@@ -139,7 +143,7 @@ public class ChoiceParameterDialog extends Dialog {
                         }
                     }
                 }else {
-                    Toast.makeText(context,"请选择商品规格",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,getContext().getString(R.string.xuanzeguige),Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -154,7 +158,7 @@ public class ChoiceParameterDialog extends Dialog {
                         }
                     }
                 }else {
-                    Toast.makeText(context,"请选择商品规格",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,getContext().getString(R.string.xuanzeguige),Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -201,8 +205,8 @@ public class ChoiceParameterDialog extends Dialog {
                 .placeholder(R.mipmap.logo))
                 .load(icon)
                 .into(ivPic);
-        tvTitle.setText("库存： "+skuList.get(0).getInventoryCount());
-        tvPrice.setText("¥ "+fake_price);
+        tvTitle.setText(context.getString(R.string.kucun)+"： "+skuList.get(0).getInventoryCount());
+        tvPrice.setText("$ "+fake_price);
 
 
         etCount.addTextChangedListener(new TextWatcher() {
@@ -444,7 +448,11 @@ public class ChoiceParameterDialog extends Dialog {
                     skuId = skuList.get(position).getId();
                     practical = skuList.get(position).getSkuPrice();
                     spec = skuList.get(position).getSpec().toString();
-                    etCount.setText(startbuy);
+                    if (SPTool.getSessionValue(SQSP.ispifa).equals("3")){
+                        etCount.setText(startbuy);
+                    }else {
+                        etCount.setText("1");
+                    }
 //                    icon = skuList.get(position).getImage();
 //                    Glide.with(context).applyDefaultRequestOptions(new RequestOptions()
 //                            .error(R.mipmap.logo)

@@ -438,10 +438,10 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
 
                 switch (type) {
                     case "0":
-                        xuanZe(numberServer, verCode, url);
+                        xuanZe(numberServer, verCode, url,resultBean.getDataObject().getUpdatecontent());
                         break;
                     case "1":
-                        qingZhi(numberServer, verCode, url);
+                        qingZhi(numberServer, verCode, url,resultBean.getDataObject().getUpdatecontent());
                         break;
                 }
             }
@@ -457,21 +457,21 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
 
 
     /*选择更新*/
-    private void xuanZe(int numberServer, int verCode, String apkurl) {
+    private void xuanZe(int numberServer, int verCode, String apkurl,String updatecontent) {
         Log.i(TAG, "xuanZe: " + numberServer + "----" + verCode);
         if (numberServer > verCode) {
             Log.i(TAG, "xuanZe: 执行1111111111");
             AllenVersionChecker
                     .getInstance()
                     .downloadOnly(
-                            UIData.create().setDownloadUrl(apkurl).setTitle("发现新版本").setContent("是否立即更新")
+                            UIData.create().setDownloadUrl(apkurl).setTitle(updatecontent).setContent(getString(R.string.shifoulijigengxin))
                     ).setNotificationBuilder(
                     NotificationBuilder.create()
                             .setRingtone(true)
                             .setIcon(R.mipmap.ic_launcher_round)
-                            .setTicker("版本更新")
-                            .setContentTitle("版本更新")
-                            .setContentText("正在下载....")
+                            .setTicker(getString(R.string.banbengengxin))
+                            .setContentTitle(getString(R.string.banbengengxin))
+                            .setContentText(getString(R.string.zhengzaixiazai))
             ).setShowDownloadingDialog(false).executeMission(mContext);
         } else {
             Log.i(TAG, "xuanZe: 执行22222222");
@@ -480,16 +480,16 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
     }
 
     /*强制更新*/
-    private void qingZhi(int numberServer, int verCode, final String apkurl) {
+    private void qingZhi(int numberServer, int verCode, final String apkurl,String updatecontent) {
 
         if (numberServer > verCode) {
             Log.i(TAG, "qingZhi: 执行33333");
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("发现新版本了");
+            builder.setTitle(updatecontent);
 
 
             //builder.setNegativeButton("取消", null);
-            builder.setPositiveButton("更新", new DialogInterface.OnClickListener() {
+            builder.setPositiveButton(getString(R.string.gengxin), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     //TODO 开始下载
@@ -527,7 +527,7 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
         progressDialog.setCancelable(false);
         progressDialog.setMax(100);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progressDialog.setMessage("正在下载");
+        progressDialog.setMessage(getString(R.string.zhengzaixiazai));
         progressDialog.show();
     }
 
@@ -537,7 +537,7 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 3) {
             Log.i(TAG, "onActivityResult: 收到请求----执行安装");
-            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "whsq.apk");
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "柬埔寨.apk");
             AppUpdateUtils.installApp(MainActivity.this, file);
             //startInstall(file);
         }
@@ -549,7 +549,7 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
             if (progressDialog != null && progressDialog.isShowing()) {
                 progressDialog.dismiss();
             }
-            AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle("发现新版本了").setMessage("网络不佳");
+            AlertDialog.Builder builder = new AlertDialog.Builder(this).setTitle(getString(R.string.faxianxinbanben)).setMessage(getString(R.string.wangluo));
             builder.setCancelable(false);
             builder.create().show();
 
@@ -569,7 +569,7 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
 
 
                 Log.i(TAG, "onActivityResult: 收到请求----执行安装");
-                File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "whsq.apk");
+                File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "柬埔寨.apk");
                 AppUpdateUtils.installApp(MainActivity.this, file);
             }
         }
@@ -611,7 +611,7 @@ public class MainActivity extends BaseActivity implements DownloadReceiver.Recei
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
             long secondTime = System.currentTimeMillis();
             if (secondTime - firstTime > 2000) {
-                Toast.makeText(MainActivity.this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.tuichu), Toast.LENGTH_SHORT).show();
                 firstTime = secondTime;
                 return true;
             } else {

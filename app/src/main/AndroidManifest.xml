@@ -218,7 +218,8 @@
         <activity
             android:name=".Activity.LoginActivity"
             android:launchMode="singleTop" />
-        <activity android:name=".Activity.RegistActivity"
+        <activity
+            android:name=".Activity.RegistActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".Activity.ForgetActivity" />
         <activity android:name=".Activity.BindingActivity" />
@@ -302,10 +303,7 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="cn.beecloud.BCMockPayActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <activity
             android:name=".Activity.OneActivity"
             android:resizeableActivity="true" />
@@ -324,7 +322,9 @@
         <activity android:name=".Activity.Withdrawal_successActivity" />
         <activity android:name=".Activity.EvaluateActivity" />
         <activity android:name=".Activity.VipActivity" />
-        <activity android:name=".Activity.Store_listActivity"></activity>
+        <activity android:name=".Activity.Store_listActivity" />
+        <activity android:name=".Activity.ChangepaypasswordActivity"></activity>
+        <service android:name=".Service.DownloadService" android:process=":download" android:exported="false" android:enabled="true"/>
     </application>
 
 </manifest>

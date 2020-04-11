@@ -126,7 +126,7 @@ public class DeatilsActivity extends BaseActivity implements View.OnClickListene
     @Override
     protected void initView(Bundle savedInstanceState) {
         setContainer(R.layout.activity_deatils);
-        setTopTitle("商品详情");
+        setTopTitle(getString(R.string.shangpinxiangqing));
 //        banner = findViewById(R.id.banner);
         recycle = findViewById(R.id.recycle);
         recycle_tuijian = findViewById(R.id.recycle_tuijian);
@@ -168,7 +168,6 @@ public class DeatilsActivity extends BaseActivity implements View.OnClickListene
         bottomView4.setOnClickListener(this);
         tv_Shopping_Cart.setOnClickListener(this);
         bottomView1.setOnClickListener(this);
-        finishBack.setOnClickListener(this);
         ll_comment.setOnClickListener(this);
         ll_guige.setOnClickListener(this);
 
@@ -439,9 +438,6 @@ public class DeatilsActivity extends BaseActivity implements View.OnClickListene
                 }
                 choiceParameterDialog.show();
                 break;
-            case R.id.finishBack:
-                finish();
-                break;
             case R.id.bottomView1://客服
                 customer();
                 break;
@@ -553,9 +549,9 @@ public class DeatilsActivity extends BaseActivity implements View.OnClickListene
                     im_shoucang.setImageResource(R.mipmap.yishoucang1);
                     im_shoucang3.setImageResource(R.mipmap.yishoucang);
                 }
-                tv_price.setText(StringUtil_li.changTVsize(resultBean.getProductDetail().getPrice()));
-                tv_oldprice.setText("$"+resultBean.getProductDetail().getOldPrice());
-                tv_integral.setText(getString(R.string.yishou)+resultBean.getProductDetail().getSales());
+                tv_price.setText(resultBean.getProductDetail().getPrice());
+                tv_oldprice.setText("$ "+resultBean.getProductDetail().getOldPrice());
+                tv_integral.setText(getString(R.string.yishou)+resultBean.getProductDetail().getSales()+getString(R.string.piece));
                 tv_productName.setText(resultBean.getProductDetail().getProductName());
                 tv_info.setText(resultBean.getProductDetail().getInfo());
                 webSetting(resultBean.getProductDetail().getUrl());
@@ -693,7 +689,7 @@ public class DeatilsActivity extends BaseActivity implements View.OnClickListene
                     list.add(resultBean.getDataList().get(0));
                     adapter.notifyDataSetChanged();
                 }else {
-                    ll_comment.setVisibility(View.GONE);
+                    ll_comment.setVisibility(View.VISIBLE);
                     recycle.setVisibility(View.GONE);
                 }
 
@@ -717,12 +713,14 @@ public class DeatilsActivity extends BaseActivity implements View.OnClickListene
             @Override
             public void onSuccess(Response response, ResultBean resultBean) {
                 if (shoucang.equals("0")){
-                    im_shoucang.setImageResource(R.mipmap.yishoucang);
+                    im_shoucang.setImageResource(R.mipmap.yishoucang1);
+                    im_shoucang3.setImageResource(R.mipmap.yishoucang);
+                    shoucang = "1";
                 }else {
-                    im_shoucang.setImageResource(R.mipmap.shoucang);
-
+                    im_shoucang.setImageResource(R.mipmap.shoucang1);
+                    im_shoucang3.setImageResource(R.mipmap.shoucang);
+                    shoucang = "0";
                 }
-                showToast(resultBean.getResultNote());
             }
 
             @Override

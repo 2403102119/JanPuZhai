@@ -14,7 +14,7 @@
             android:id="@+id/im_userIcon"
             android:scaleType="fitXY"
             app:riv_oval="true"
-            android:src="@mipmap/yongjinzhongxin"
+            android:src="@mipmap/logo"
             android:layout_width="41dp"
             android:layout_height="41dp" />
         <LinearLayout
@@ -26,35 +26,37 @@
             <TextView
                 android:id="@+id/tv_nickName"
                 android:text=""
+                android:textStyle="bold"
                 android:textColor="#333333"
                 android:textSize="14sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
-        <com.iarcuschin.simpleratingbar.SimpleRatingBar
-            android:id="@+id/rb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srb_starSize="11dp"
-            android:layout_marginLeft="5dp"
-            app:srb_isIndicator="true"
-            app:srb_numberOfStars="5"
-            app:srb_rating="0"
-            app:srb_stepSize="1"
-            app:srb_drawBorderEnabled="false"
-            app:srb_starBackgroundColor="#c0c0c0"
-            app:srb_fillColor="@color/red_them"/>
+
         <TextView
             android:id="@+id/tv_adtime"
-            android:visibility="gone"
             android:text=""
             android:textColor="#666666"
             android:textSize="10sp"
-            android:layout_width="wrap_content"
+            android:gravity="right"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content" />
     </LinearLayout>
-
+    <com.iarcuschin.simpleratingbar.SimpleRatingBar
+        android:id="@+id/rb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srb_starSize="11dp"
+        android:layout_marginLeft="5dp"
+        app:srb_isIndicator="true"
+        app:srb_numberOfStars="5"
+        app:srb_rating="0"
+        app:srb_stepSize="1"
+        app:srb_drawBorderEnabled="false"
+        app:srb_starBackgroundColor="#c0c0c0"
+        app:srb_fillColor="@color/red_them"/>
     <TextView
         android:id="@+id/tv_content"
         android:layout_marginTop="16dp"
@@ -68,5 +70,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </android.support.v7.widget.RecyclerView>
+    <View
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/btn_gtay_light"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
 </LinearLayout>

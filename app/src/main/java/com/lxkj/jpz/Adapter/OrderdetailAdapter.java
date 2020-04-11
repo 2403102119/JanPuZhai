@@ -45,11 +45,11 @@ public class OrderdetailAdapter extends  RecyclerView.Adapter<OrderdetailAdapter
                 .load(list.get(position).getProductImage())
                 .into(holder.image2);
         holder.tv1.setText(list.get(position).getProductName());
-        holder.tv3.setText("¥ "+list.get(position).getProductPrice());
+        holder.tv3.setText("$ "+list.get(position).getProductPrice());
         if (!StringUtil_li.isSpace(list.get(position).getProductSkuName2())){
-            holder.tv2.setText("规格："+list.get(position).getProductSkuName1()+" "+list.get(position).getProductSkuName2());
+            holder.tv2.setText(list.get(position).getProductSkuName1()+" "+list.get(position).getProductSkuName2());
         }else {
-            holder.tv2.setText("规格："+list.get(position).getProductSkuName1());
+            holder.tv2.setText(list.get(position).getProductSkuName1());
         }
 
         holder.tv_count.setText("×"+list.get(position).getProductCount());

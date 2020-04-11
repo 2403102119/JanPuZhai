@@ -21,6 +21,7 @@ import com.lxkj.jpz.SQSP;
 import com.lxkj.jpz.Uri.NetClass;
 import com.lxkj.jpz.Utils.SPTool;
 import com.lxkj.jpz.Utils.StringUtil_li;
+import com.lxkj.jpz.View.ActionDialog;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -50,7 +51,8 @@ public class ReceivewActivity extends BaseActivity implements View.OnClickListen
     private int pageNoIndex = 1;
     private int totalPage = 1;
     private static final String TAG = "ReceivewActivity";
-    private String type;
+    private String type,id;
+    private ActionDialog actionDialog;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -91,6 +93,18 @@ public class ReceivewActivity extends BaseActivity implements View.OnClickListen
                 }
             }
         });
+        actionDialog = new ActionDialog(mContext,"提示","","确认删除","取消","确认");
+        actionDialog.setOnActionClickListener(new ActionDialog.OnActionClickListener() {
+            @Override
+            public void onLeftClick() {
+                actionDialog.dismiss();
+            }
+
+            @Override
+            public void onRightClick() {
+                delAddress(id);
+            }
+        });
         layoutManager = new LinearLayoutManager(ReceivewActivity.this);
         address_recycle.setLayoutManager(layoutManager);
         adapter = new ShippingAdapter(ReceivewActivity.this, list);
@@ -115,7 +129,8 @@ public class ReceivewActivity extends BaseActivity implements View.OnClickListen
 
             @Override
             public void OnDelate(int firstPosition) {//删除
-                delAddress(list.get(firstPosition).getAddressId());
+                id = list.get(firstPosition).getAddressId();
+                actionDialog.show();
             }
 
             @Override
@@ -252,6 +267,7 @@ public class ReceivewActivity extends BaseActivity implements View.OnClickListen
             public void onSuccess(Response response, ResultBean resultBean) {
                 showToast(resultBean.getResultNote());
                 getAddressList("1");
+                actionDialog.dismiss();
             }
 
             @Override

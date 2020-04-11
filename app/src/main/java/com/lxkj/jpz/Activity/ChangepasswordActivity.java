@@ -101,7 +101,7 @@ public class ChangepasswordActivity extends BaseActivity implements View.OnClick
                 showToast(resultBean.getResultNote());
                 yzmcode = resultBean.getCode();
                 //设置短信验证码多少秒后重新获取
-                MyCountDownTimer timer = new MyCountDownTimer(ChangepasswordActivity.this, faCode, 180 * 1000, 1000);
+                MyCountDownTimer timer = new MyCountDownTimer(ChangepasswordActivity.this, faCode, 60 * 1000, 1000);
                 timer.start();
             }
 
@@ -116,10 +116,11 @@ public class ChangepasswordActivity extends BaseActivity implements View.OnClick
     //更改密码
     private void updateUserPassword(String oldPwd,String newPwd) {
         Map<String, String> params = new HashMap<>();
-        params.put("cmd","updateUserPassword");
+        params.put("cmd","updateUserPayPassword");
         params.put("uid", SPTool.getSessionValue(SQSP.uid));
         params.put("oldPwd",oldPwd);
         params.put("newPwd",newPwd);
+        params.put("type","1");
         OkHttpHelper.getInstance().post_json(mContext, NetClass.BASE_URL, params, new SpotsCallBack<ResultBean>(mContext) {
             @Override
             public void onSuccess(Response response, ResultBean resultBean) {

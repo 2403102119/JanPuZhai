@@ -50,7 +50,7 @@ import okhttp3.Response;
 
 public class SetActivity extends BaseActivity implements View.OnClickListener{
     private static final String TAG = "SetActivity";
-    private RelativeLayout rel2,rel1,rel3,yonghu;
+    private RelativeLayout rel2,rel1,rel3,yonghu,rel5;
     private String phone,emile;
     private TextView tv_login,tv_huancun,banbenhao;
     private LinearLayout ll_clear;
@@ -72,6 +72,7 @@ public class SetActivity extends BaseActivity implements View.OnClickListener{
         banbenhao = findViewById(R.id.banbenhao);
         yonghu = findViewById(R.id.yonghu);
         im_kaiguan = findViewById(R.id.im_kaiguan);
+        rel5 = findViewById(R.id.rel5);
         banbenhao.setText(APKVersionCodeUtils.getVerName(SetActivity.this)+"");
         rel3 = findViewById(R.id.rel3);
         try {
@@ -102,6 +103,7 @@ public class SetActivity extends BaseActivity implements View.OnClickListener{
         rel3.setOnClickListener(this);
         yonghu.setOnClickListener(this);
         im_kaiguan.setOnClickListener(this);
+        rel5.setOnClickListener(this);
     }
 
     private void selectLanguage(int select) {
@@ -130,6 +132,7 @@ public class SetActivity extends BaseActivity implements View.OnClickListener{
                 }
                 Intent intent1 = new Intent(SetActivity.this,ChangepasswordActivity.class);
                 intent1.putExtra("emile",emile);
+                intent1.putExtra("type","1");
                 startActivity(intent1);
                 break;
             case R.id.tv_login://退出登录
@@ -180,6 +183,17 @@ public class SetActivity extends BaseActivity implements View.OnClickListener{
                     LocalManageUtil.onConfigurationChanged(this);
                     reStartApp();
                 }
+                break;
+            case R.id.rel5://修改支付密码
+                if (TextUtils.isEmpty(SPTool.getSessionValue(SQSP.uid))){
+                    ToastFactory.getToast(mContext, getString(R.string.Please_login_first)).show();
+                    startActivity(new Intent(mContext, LoginActivity.class));
+                    //finish();
+                    return;
+                }
+                Intent intent2 = new Intent(SetActivity.this,ChangepaypasswordActivity.class);
+                intent2.putExtra("emile",emile);
+                startActivity(intent2);
                 break;
         }
     }

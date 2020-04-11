@@ -51,7 +51,7 @@
     <string name="My_invitation">我的邀请</string>
     <string name="shipping_address">收货地址</string>
     <string name="set">设置</string>
-    <string name="change_password">更改密码</string>
+    <string name="change_password">更改登录密码</string>
     <string name="feedback">意见反馈</string>
     <string name="version_updating">版本更新</string>
     <string name="clear_cache">清除缓存</string>
@@ -122,9 +122,9 @@
     <string name="Distribution_rights">分销权益</string>
     <string name="Wholesaler_interest">批发商权益</string>
     <string name="gold_medal">金牌VIP</string>
-    <string name="Special_zone">特价专区</string>
-    <string name="Boutique_zone">精品专区</string>
-    <string name="Discount_zone">折扣专区</string>
+    <string name="Special_zone">特价区</string>
+    <string name="Boutique_zone">精品区</string>
+    <string name="Discount_zone">折扣区</string>
     <string name="name">姓名:</string>
     <string name="shoujihao">手机号:</string>
     <string name="wx">微信:</string>
@@ -164,7 +164,7 @@
     <string name="price">价格</string>
     <string name="Please_login_first">请先登录</string>
     <string name="piece">件</string>
-    <string name="yishou">已售:</string>
+    <string name="yishou">已售</string>
     <string name="shoucang">收藏</string>
     <string name="guige">规格</string>
     <string name="shangpinxiangqing">商品详情</string>
@@ -286,4 +286,17 @@
     <string name="youxiangyicunzai">邮箱已存在</string>
     <string name="neirongxiangqing">内容详情</string>
     <string name="qinglihuancun">清理缓存成功！</string>
+    <string name="kucun">库存</string>
+    <string name="xuanzeguige">请选择商品规格</string>
+    <string name="goumaishulaing">购买数量</string>
+    <string name="Changepaymentpassword">更改支付密码</string>
+    <string name="chakangengduo">查看更多</string>
+    <string name="pifashang">批发商</string>
+    <string name="xuzhifu">需支付</string>
+    <string name="xuanzezhifufangshi">选择支付方式</string>
+    <string name="yiwancheng">已完成</string>
+    <string name="tuikaunzhong">退款中</string>
+    <string name="chakanxiangqing">查看详情</string>
+    <string name="tuichu">再按一次退出程序</string>
+    <string name="wangluo">网络不佳</string>
 </resources>

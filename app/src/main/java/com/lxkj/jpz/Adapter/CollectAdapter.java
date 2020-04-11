@@ -44,9 +44,9 @@ public class CollectAdapter  extends  RecyclerView.Adapter<CollectAdapter.MyHold
                 .placeholder(R.mipmap.ic_figure_head))
                 .load(list.get(position).getLogo())
                 .into(holder.image1);
-        holder.tv_sales.setText("销量"+list.get(position).getSales());
+        holder.tv_sales.setText(context.getString(R.string.sales_volume)+list.get(position).getSales());
         holder.tv_title.setText(list.get(position).getTitle());
-        holder.tv_price.setText("¥ "+list.get(position).getOldPrice());
+        holder.tv_price.setText("$ "+list.get(position).getOldPrice());
         holder.im_delate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

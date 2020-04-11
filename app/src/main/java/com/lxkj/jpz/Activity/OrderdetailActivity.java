@@ -140,9 +140,14 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
         switch (v.getId()){
             case R.id.ll_qufukuan:
                 if (tv_detaile.getText().toString().equals(getString(R.string.qufukuan))){
-                    Intent intent = new Intent(OrderdetailActivity.this,PayActivity.class);
+//                    Intent intent = new Intent(OrderdetailActivity.this,PayActivity.class);
+//                    intent.putExtra("moeny",amount);
+//                    intent.putExtra("orderid",orderid);
+//                    startActivity(intent);
+                    Intent intent = new Intent(mContext,RechargeActivity.class);
                     intent.putExtra("moeny",amount);
-                    intent.putExtra("orderid",orderid);
+                    intent.putExtra("type","2");
+                    intent.putExtra("orderId",orderid);
                     startActivity(intent);
                 }else if (tv_detaile.getText().toString().equals(getString(R.string.qupingjia))){
                     Intent intent1 = new Intent(OrderdetailActivity.this,AppraiseActivity.class);
@@ -312,7 +317,7 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
                         tv_shi.setText(getString(R.string.baoyou));
                         yunfei = "0";
                         amount = zongji;
-                        BigDecimal yunfei = new BigDecimal(resultBean.getAmount());
+                        BigDecimal yunfei = new BigDecimal(0);
                         BigDecimal jiage = new BigDecimal(zongji);
                         BigDecimal zongji = yunfei.add(jiage);
                         tv_yunfei.setText("$"+zongji.toString());
@@ -333,16 +338,16 @@ public class OrderdetailActivity extends BaseActivity implements View.OnClickLis
                     tv_yunfei.setText("$"+zongji.toString());
                 }
 
-                yunfei = resultBean.getAmount();
-                BigDecimal yunfei = new BigDecimal(resultBean.getAmount());
-                BigDecimal jiage = new BigDecimal(zongji);
-                BigDecimal zongji = yunfei.add(jiage);
-                if (yunfei.toString().equals("0")){
-                    tv_shi.setText(getString(R.string.baoyou));
-                }else {
-                    tv_shi.setText("¥"+yunfei);
-                }
-                amount = zongji.toString();
+//                yunfei = resultBean.getAmount();
+//                BigDecimal yunfei = new BigDecimal(resultBean.getAmount());
+//                BigDecimal jiage = new BigDecimal(zongji);
+//                BigDecimal zongji = yunfei.add(jiage);
+//                if (yunfei.toString().equals("0")){
+//                    tv_shi.setText(getString(R.string.baoyou));
+//                }else {
+//                    tv_shi.setText("¥"+yunfei);
+//                }
+//                amount = zongji.toString();
             }
 
             @Override

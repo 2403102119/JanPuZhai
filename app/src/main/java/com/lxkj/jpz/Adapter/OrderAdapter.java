@@ -48,35 +48,35 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyHolder> {
 
         item_list.addAll(list.get(position).getOrderItem());
 
-        holder.tv1.setText("订单编号："+list.get(position).getOrderid());
+        holder.tv1.setText(context.getString(R.string.dingdanbianhao)+""+list.get(position).getOrderid());
         if (list.get(position).getStatus().equals("0")){
-            holder.tv2.setText("待付款");
-            holder.tv_qufukaun.setText("去付款");
+            holder.tv2.setText(context.getString(R.string.obligation));
+            holder.tv_qufukaun.setText(context.getString(R.string.qufukuan));
             holder.tv_chakan.setVisibility(View.GONE);
             holder.tv_qufukaun.setVisibility(View.VISIBLE);
         }else if (list.get(position).getStatus().equals("1")){
-            holder.tv2.setText("待发货");
+            holder.tv2.setText(context.getString(R.string.To_send_the_goods));
         }else if (list.get(position).getStatus().equals("2")){
-            holder.tv2.setText("待收货");
-            holder.tv_qufukaun.setText("确认收货");
+            holder.tv2.setText(context.getString(R.string.wait_for_receiving));
+            holder.tv_qufukaun.setText(context.getString(R.string.quedingshouhuo));
             holder.tv_chakan.setVisibility(View.VISIBLE);
             holder.tv_qufukaun.setVisibility(View.VISIBLE);
         }else if (list.get(position).getStatus().equals("3")){
-            holder.tv2.setText("待评价");
-            holder.tv_qufukaun.setText("去评价");
+            holder.tv2.setText(context.getString(R.string.remain_to_be_evaluated));
+            holder.tv_qufukaun.setText(context.getString(R.string.qupingjia));
             holder.tv_qufukaun.setVisibility(View.VISIBLE);
         }else if (list.get(position).getStatus().equals("4")){
-            holder.tv2.setText("已完成");
+            holder.tv2.setText(context.getString(R.string.yiwancheng));
         }else if (list.get(position).getStatus().equals("5")){
-            holder.tv2.setText("已取消");
+            holder.tv2.setText(context.getString(R.string.yiquxiao));
         }else if (list.get(position).getStatus().equals("6")){
-            holder.tv2.setText("退款中");
-            holder.tv_qufukaun.setText("查看详情");
+            holder.tv2.setText(context.getString(R.string.tuikaunzhong));
+            holder.tv_qufukaun.setText(context.getString(R.string.chakanxiangqing));
             holder.tv_qufukaun.setVisibility(View.VISIBLE);
         }else if (list.get(position).getStatus().equals("7")){
-            holder.tv2.setText("已退款");
+            holder.tv2.setText(context.getString(R.string.yituikuan));
         }else if (list.get(position).getStatus().equals("8")){
-            holder.tv2.setText("拒绝退款");
+            holder.tv2.setText(context.getString(R.string.tuikuanyijujue));
         }
         holder.tv_time.setText(list.get(position).getAdtime());
         layoutManager = new LinearLayoutManager(context);
@@ -98,13 +98,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyHolder> {
         holder.tv_qufukaun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (holder.tv_qufukaun.getText().toString().equals("查看详情")){
+                if (holder.tv_qufukaun.getText().toString().equals(context.getString(R.string.chakanxiangqing))){
                     onItemClickListener.tuikuanxiangqing(position);
-                }else if (holder.tv_qufukaun.getText().toString().equals("去评价")){
+                }else if (holder.tv_qufukaun.getText().toString().equals(context.getString(R.string.qupingjia))){
                     onItemClickListener.qupingjia(position);
-                }else if (holder.tv_qufukaun.getText().toString().equals("确认收货")){
+                }else if (holder.tv_qufukaun.getText().toString().equals(context.getString(R.string.quedingshouhuo))){
                     onItemClickListener.querenshouhuo(position);
-                }else if (holder.tv_qufukaun.getText().toString().equals("去付款")){
+                }else if (holder.tv_qufukaun.getText().toString().equals(context.getString(R.string.qufukuan))){
                     onItemClickListener.qufukuan(position);
                 }
             }

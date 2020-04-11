@@ -31,8 +31,8 @@ public class OrderActivity extends BaseActivity implements View.OnClickListener 
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private Fragment[] mFragmentArrays = new Fragment[6];
-    private String[] mTabTitles = new String[6];
+    private Fragment[] mFragmentArrays = new Fragment[5];
+    private String[] mTabTitles = new String[5];
     private String position;
     private TextView title_t;
     private ImageView im_back;

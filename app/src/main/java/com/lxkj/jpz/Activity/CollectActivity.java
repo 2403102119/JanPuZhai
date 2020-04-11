@@ -18,6 +18,7 @@ import com.lxkj.jpz.R;
 import com.lxkj.jpz.SQSP;
 import com.lxkj.jpz.Uri.NetClass;
 import com.lxkj.jpz.Utils.SPTool;
+import com.lxkj.jpz.View.ActionDialog;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -45,6 +46,8 @@ public class CollectActivity extends BaseActivity {
     private SmartRefreshLayout smart;
     private int pageNoIndex = 1;
     private int totalPage = 1;
+    private ActionDialog actionDialog;
+    private String id;
 
     @Override
     protected void initView(Bundle savedInstanceState) {
@@ -81,6 +84,19 @@ public class CollectActivity extends BaseActivity {
                 }
             }
         });
+
+        actionDialog = new ActionDialog(mContext,"提示","","确认删除","取消","确认");
+        actionDialog.setOnActionClickListener(new ActionDialog.OnActionClickListener() {
+            @Override
+            public void onLeftClick() {
+                actionDialog.dismiss();
+            }
+
+            @Override
+            public void onRightClick() {
+                collectProduct(id);
+            }
+        });
         layoutManager = new LinearLayoutManager(CollectActivity.this);
         collec_recycle.setLayoutManager(layoutManager);
         adapter = new CollectAdapter(CollectActivity.this, list);
@@ -100,7 +116,8 @@ public class CollectActivity extends BaseActivity {
 
             @Override
             public void OnDealte(int position) {
-                collectProduct(list.get(position).getProductid());
+                id = list.get(position).getProductid();
+                actionDialog.show();
             }
 
             @Override
@@ -164,6 +181,7 @@ public class CollectActivity extends BaseActivity {
             public void onSuccess(Response response, AboutUsbean resultBean) {
                 myCollect("1");
                 showToast(resultBean.getResultNote());
+                actionDialog.dismiss();
             }
 
             @Override

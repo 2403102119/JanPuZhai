@@ -68,13 +68,12 @@
                         android:paddingRight="6dp"
                         android:paddingTop="2dp"
                         android:paddingBottom="2dp"
-                        android:background="@drawable/biankuang9"
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
                         android:gravity="center_vertical"
                         android:maxLines="1"
                         android:singleLine="true"
-                        android:text="规格: 20斤一箱"
+                        android:text="20斤一箱"
                         android:textColor="#999"
                         android:textSize="@dimen/sp_12" />
                     <View

@@ -156,10 +156,10 @@ public class Add_addressActivity extends BaseActivity implements View.OnClickLis
                     showToast(R.string.Please_enter_a_contact_number);
                     return;
                 }
-//                if (!StringUtil_li.isPhone(et_phone.getText().toString())){
-//                    showToast(getString(R.string.Please_enter_the_correct_contact_number));
-//                    return;
-//                }
+                if (!StringUtil_li.isPhone(et_phone.getText().toString())){
+                    showToast(getString(R.string.Please_enter_the_correct_contact_number));
+                    return;
+                }
                 if (StringUtil_li.isSpace(tv_site.getText().toString())){
                     showToast(getString(R.string.Please_select_the_address));
                     return;

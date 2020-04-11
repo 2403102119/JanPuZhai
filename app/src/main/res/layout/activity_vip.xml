@@ -107,7 +107,7 @@
             android:layout_height="match_parent" />
         <TextView
             android:id="@+id/tv_payment"
-            android:text="付款"
+            android:text="@string/fukuan"
             android:background="#FC737E"
             android:textColor="@color/white"
             android:textSize="16sp"

@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context="com.lxkj.jpz.Activity.ClassifyActivity">
     <LinearLayout
         android:id="@+id/ll_search"
@@ -97,8 +99,8 @@
                         android:id="@+id/im_shang"
                         android:layout_marginLeft="3dp"
                         android:src="@mipmap/xia"
-                        android:layout_width="6dp"
-                        android:layout_height="9dp" />
+                        android:layout_width="10dp"
+                        android:layout_height="15dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/ll_price"
@@ -119,8 +121,8 @@
                         android:id="@+id/im_xia"
                         android:layout_marginLeft="3dp"
                         android:src="@mipmap/xia"
-                        android:layout_width="6dp"
-                        android:layout_height="9dp" />
+                        android:layout_width="10dp"
+                        android:layout_height="15dp" />
                 </LinearLayout>
             </LinearLayout>
             <View

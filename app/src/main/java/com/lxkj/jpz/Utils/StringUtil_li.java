@@ -64,7 +64,7 @@ public class StringUtil_li {
      * 判断是否是一个合法的手机号
      */
     public static boolean isPhone(String number) {
-        String pattern = "^1(3[0-9]|4[5,7]|5[0-9]|7[0,1,2,3,4,5,6,7,8,9]|8[0-9])\\d{8}$";
+        String pattern = "^1(3[0-9]|4[5,7]|5[0-9]|6[0-9]|7[0,1,2,3,4,5,6,7,8,9]|8[0-9])\\d{8}$";
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(number);
         return m.matches();

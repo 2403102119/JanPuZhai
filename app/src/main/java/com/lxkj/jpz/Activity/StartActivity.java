@@ -38,7 +38,6 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
         privacyPolicy();
 
-
     }
     //协议列表
     private void privacyPolicy() {

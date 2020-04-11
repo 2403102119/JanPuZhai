@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding="15dp"
+    android:padding="48dp"
     tools:context="com.lxkj.jpz.Activity.MailboxActivity">
     <TextView
         android:text="@string/Email_quick_login"

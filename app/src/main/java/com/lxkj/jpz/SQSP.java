@@ -13,6 +13,7 @@ public class SQSP {
     //保存用户个人信息
     public static final String uid = "uid";//用户ID
     public static final String setPwd = "setPwd";//是否设置支付密码
+    public static final String ispifa = "ispifa";//是否批发商
     public static final String xieyi = "0";//是否同意用户协议
     public static final String isLogin = "ISLOGIN";//用户是否登录
     public static final String yongjin = "yongjin";//佣金

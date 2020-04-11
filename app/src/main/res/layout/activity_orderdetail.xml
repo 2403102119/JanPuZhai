@@ -166,6 +166,7 @@
                       android:layout_marginLeft="10dp"
                       android:text="$0.00"
                       android:textSize="14sp"
+                      android:textStyle="bold"
                       android:textColor="#FF0000"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content" />
@@ -224,6 +225,7 @@
                             android:id="@+id/tv_yunfei"
                             android:layout_width="0dp"
                             android:layout_weight="1"
+                            android:textStyle="bold"
                             android:layout_height="match_parent"
                             android:layout_alignParentRight="true"
                             android:gravity="right|center_vertical"
@@ -483,6 +485,7 @@
         <TextView
             android:id="@+id/tv_detaile"
             android:text="@string/qufukuan"
+            android:textStyle="bold"
             android:textSize="14sp"
             android:textColor="@color/red_them"
             android:gravity="center"

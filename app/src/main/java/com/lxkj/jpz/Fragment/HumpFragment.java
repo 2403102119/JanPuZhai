@@ -157,7 +157,7 @@ public class HumpFragment extends BaseFragment implements View.OnClickListener{
         });
     }
     private void initData() {
-        shouhuodialog = new ActionDialog(getContext(),"","","确认收货？","再想想","确认");
+        shouhuodialog = new ActionDialog(getContext(),"","",getString(R.string.querenshouhuo),getString(R.string.zaixiangxiang),getString(R.string.quere));
         shouhuodialog.setOnActionClickListener(new ActionDialog.OnActionClickListener() {
             @Override
             public void onLeftClick() {

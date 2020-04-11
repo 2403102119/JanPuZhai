@@ -65,6 +65,8 @@ public class AppraiseActivity extends BaseActivity implements View.OnClickListen
     private int type = 0;//选择图片类型 0 banner,1 goods
     ArrayList<String> YaSouList = new ArrayList<>();
     private UpFileUtil upFileUtil;
+    private int select_number = 3;
+    private List<String> urllist = new ArrayList<>();
 
 
     private void checkPmsExternalStorage() {
@@ -81,7 +83,7 @@ public class AppraiseActivity extends BaseActivity implements View.OnClickListen
         if (type == 0) {
             MultiImageSelector.create(mContext)
                     .showCamera(true) // 是否显示相机. 默认为显示
-                    .count(3) // 最大选择图片数量, 默认为9. 只有在选择模式为多选时有效
+                    .count(select_number) // 最大选择图片数量, 默认为9. 只有在选择模式为多选时有效
                     .multi() // 多选模式, 默认模式;
                     .origin(mSelectPath) // 默认已选择图片. 只有在选择模式为多选时有效
                     .start(AppraiseActivity.this, REQUEST_IMAGE);
@@ -258,6 +260,7 @@ public class AppraiseActivity extends BaseActivity implements View.OnClickListen
     @Override
     public void onRemove(int positon,int childPosition) {
         commentBeans.get(positon).upLoadImages.remove(childPosition);
+        amendurl(childPosition);
     }
 
 
@@ -268,9 +271,19 @@ public class AppraiseActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void uoLoad(@NotNull List<String> url) {
+        for (int i = 0; i < url.size() ; i++) {
+            url.get(i).replace(" ","");
+            urllist.add(url.get(i));
+        }
         commentBeans.get(positon).upLoadImages.clear();
-        commentBeans.get(positon).upLoadImages.addAll(url);
+        commentBeans.get(positon).upLoadImages.addAll(urllist);
     }
-
+    public void amendurl(int chposition){
+        urllist.remove(chposition);
+        commentBeans.get(positon).upLoadImages.clear();
+        commentBeans.get(positon).upLoadImages.addAll(urllist);
+        select_number = 3-urllist.size();
+        Log.i(TAG, "amendurl: "+urllist);
+    }
 
 }
