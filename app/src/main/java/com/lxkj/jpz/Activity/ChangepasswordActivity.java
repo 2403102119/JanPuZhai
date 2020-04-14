@@ -13,6 +13,7 @@ import com.lxkj.jpz.Http.SpotsCallBack;
 import com.lxkj.jpz.R;
 import com.lxkj.jpz.SQSP;
 import com.lxkj.jpz.Uri.NetClass;
+import com.lxkj.jpz.Utils.MD5Util;
 import com.lxkj.jpz.Utils.MyCountDownTimer;
 import com.lxkj.jpz.Utils.SPTool;
 import com.lxkj.jpz.Utils.StringUtil_li;
@@ -84,7 +85,7 @@ public class ChangepasswordActivity extends BaseActivity implements View.OnClick
                     showToast(getString(R.string.same_as_the_new_one));
                     return;
                 }
-                updateUserPassword(et_oldpassword.getText().toString(),et_newPassword.getText().toString());
+                updateUserPassword(MD5Util.encrypt(et_oldpassword.getText().toString()),MD5Util.encrypt(et_newPassword.getText().toString()));
                 break;
         }
     }
